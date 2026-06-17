@@ -87,6 +87,12 @@ Modo estable de baja memoria (sin descarga de modelos):
 
 Si un PDF no tiene texto seleccionable, la ingesta intenta OCR pagina por pagina.
 
+Instalacion automatica en Windows (actualiza tambien `OCR_TESSERACT_CMD` en `.env`):
+
+```bash
+powershell -ExecutionPolicy Bypass -File scripts/install_tesseract.ps1
+```
+
 Requiere instalar Tesseract en el sistema operativo y tenerlo en `PATH`.
 
 Si no esta en `PATH`, configura `OCR_TESSERACT_CMD` con la ruta completa del ejecutable.
