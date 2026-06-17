@@ -44,10 +44,14 @@ class LLMClient:
         from openai import OpenAI
 
         api_key = self.settings.openai_api_key or os.getenv("OPENAI_API_KEY")
-        if not api_key:
+        base_url = self.settings.openai_base_url or os.getenv("OPENAI_BASE_URL")
+        if not api_key and not base_url:
             raise ValueError("OPENAI_API_KEY no configurada")
 
-        client = OpenAI(api_key=api_key)
+        # Some local OpenAI-compatible servers (e.g., LM Studio) accept any placeholder key.
+        effective_api_key = api_key or "lm-studio"
+
+        client = OpenAI(api_key=effective_api_key, base_url=base_url)
         messages = []
         if system_prompt:
             messages.append({"role": "system", "content": system_prompt})
@@ -123,6 +127,10 @@ class LLMClient:
             logger.info("LLM auto: usando proveedor ollama con modelo %s", self.settings.ollama_model)
             return "ollama"
 
+        if self._is_openai_compatible_available():
+            logger.info("LLM auto: usando proveedor openai-compatible")
+            return "openai"
+
         if self.settings.openai_api_key or os.getenv("OPENAI_API_KEY"):
             logger.info("LLM auto: usando proveedor openai")
             return "openai"
@@ -174,6 +182,20 @@ class LLMClient:
         models = payload.get("models") or []
         names = {str(model.get("name", "")).strip() for model in models if isinstance(model, dict)}
         return {name for name in names if name}
+
+    def _is_openai_compatible_available(self) -> bool:
+        base_url = (self.settings.openai_base_url or os.getenv("OPENAI_BASE_URL") or "").strip().rstrip("/")
+        if not base_url:
+            return False
+
+        url = f"{base_url}/models"
+        req = request.Request(url=url, method="GET")
+        try:
+            with request.urlopen(req, timeout=5) as response:
+                _ = response.read()
+            return True
+        except Exception:
+            return False
 
     def _extract_json(self, text: str) -> dict:
         cleaned = text.strip()

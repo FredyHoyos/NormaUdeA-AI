@@ -2768,3 +2768,13 @@ FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\fredi\\OneDr
 2026-06-17 15:28:20,833 | INFO | app.vectorstore.chroma_store | Indexados 2 chunks en ChromaDB
 2026-06-17 15:28:40,043 | INFO | app.retrieval.retriever | Recuperados 5 fragmentos para la consulta
 2026-06-17 15:32:25,837 | INFO | app.retrieval.retriever | Recuperados 5 fragmentos para la consulta
+2026-06-17 16:51:45,431 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 16:52:06,153 | INFO | app.ingestion.pdf_loader | Extraidos 4 chunks desde documento_35221944.pdf
+2026-06-17 16:52:06,333 | INFO | app.vectorstore.chroma_store | Indexados 4 chunks en ChromaDB
+2026-06-17 16:52:08,511 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_35222153.pdf
+2026-06-17 16:52:08,566 | INFO | app.vectorstore.chroma_store | Indexados 2 chunks en ChromaDB
+2026-06-17 16:52:39,045 | WARNING | app.llm.client | LLM auto: no se detecto proveedor disponible, activando modo none
+2026-06-17 16:52:39,112 | INFO | app.retrieval.retriever | Recuperados 5 fragmentos para la consulta
+2026-06-17 17:03:15,535 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 17:03:35,309 | WARNING | app.llm.client | LLM auto: no se detecto proveedor disponible, activando modo none
+2026-06-17 17:03:35,518 | INFO | app.retrieval.retriever | Recuperados 5 fragmentos para la consulta

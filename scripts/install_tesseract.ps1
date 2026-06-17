@@ -95,3 +95,8 @@ Set-EnvValue -FilePath $resolvedEnvPath -Key "OCR_ENABLED" -Value "true"
 
 Write-Host "Listo. OCR_TESSERACT_CMD actualizado en $resolvedEnvPath"
 Write-Host "Ruta detectada: $normalized"
+
+
+
+# debe ejecutarse desde la raiz del repo para que funcione el path relativo a .env y .tools/tesseract
+# powershell -ExecutionPolicy Bypass -File scripts/install_tesseract.ps1

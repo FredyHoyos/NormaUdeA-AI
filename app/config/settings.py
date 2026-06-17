@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     confidence_threshold: float = 0.35
     llm_provider: str = "auto"
     openai_api_key: str | None = None
+    openai_base_url: str | None = None
     openai_model: str = "gpt-4o-mini"
     gemini_api_key: str | None = None
     gemini_model: str = "gemini-1.5-pro"
