@@ -10,7 +10,7 @@ MVP funcional para una hackathon de 24 horas. Consulta PDFs locales con lenguaje
 - ChromaDB
 - BGE-M3 embeddings
 - PyMuPDF
-- OpenAI o Gemini por configuracion en `.env`
+- OpenAI, Gemini u Ollama local por configuracion en `.env`
 
 ## Estructura
 
@@ -50,14 +50,31 @@ streamlit run app/main.py
 
 ## Variables de entorno
 
-- `LLM_PROVIDER=openai|gemini`
-- `LLM_PROVIDER=none` para modo local de contingencia (sin llamadas a API)
+- `LLM_PROVIDER=auto|openai|gemini|ollama|none`
+- `LLM_PROVIDER=none` para modo de contingencia (sin llamadas a API)
+- `LLM_PROVIDER=auto` detecta automaticamente: Ollama local, OpenAI, Gemini o none
 - `OPENAI_API_KEY` o `GEMINI_API_KEY`
 - `OPENAI_MODEL` o `GEMINI_MODEL`
+- `OLLAMA_BASE_URL`, `OLLAMA_MODEL` y `OLLAMA_MODEL_CANDIDATES` para LLM local
 - `PDF_DIR`, `CHROMA_DIR`, `CHUNK_SIZE`, `RETRIEVAL_K`
 - `BGE_M3_MODEL=BAAI/bge-m3`
 - `BGE_M3_LOCAL_DIR=data/models/bge-m3`
 - `BGE_M3_CACHE_DIR=data/models/.cache/huggingface`
+
+Ejemplo rapido con Ollama local:
+
+```bash
+ollama pull llama3.1:8b
+```
+
+```dotenv
+LLM_PROVIDER=auto
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.1:8b
+OLLAMA_MODEL_CANDIDATES=llama3.1:8b,qwen2.5:7b,mistral:7b
+```
+
+Para cambiar de modelo local solo cambia `OLLAMA_MODEL` (por ejemplo `qwen2.5:7b`, `mistral:7b`).
 
 Modo estable de baja memoria (sin descarga de modelos):
 

@@ -17,11 +17,15 @@ class Settings(BaseSettings):
     retrieval_k: int = 5
     max_context_chars: int = 12000
     confidence_threshold: float = 0.35
-    llm_provider: str = "openai"
+    llm_provider: str = "auto"
     openai_api_key: str | None = None
     openai_model: str = "gpt-4o-mini"
     gemini_api_key: str | None = None
     gemini_model: str = "gemini-1.5-pro"
+    ollama_base_url: str = "http://localhost:11434"
+    ollama_model: str = "llama3.1:8b"
+    ollama_model_candidates: str = "llama3.1:8b,qwen2.5:7b,mistral:7b"
+    ollama_timeout_seconds: int = 120
     temperature: float = 0.1
     bge_m3_model: str = "BAAI/bge-m3"
     bge_m3_local_dir: Path = Field(default=Path("data/models/bge-m3"))
