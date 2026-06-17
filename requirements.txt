@@ -1,0 +1,12 @@
+streamlit
+crewai
+chromadb
+pymupdf
+sentence-transformers
+pydantic>=2.7
+pydantic-settings>=2.2
+openai>=1.30.0
+google-generativeai>=0.7.0
+python-dotenv>=1.0.1
+pytest>=8.0.0
+numpy>=1.26.0

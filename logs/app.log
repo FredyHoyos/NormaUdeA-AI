@@ -1,0 +1,846 @@
+2026-06-17 09:57:16,118 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 10:00:53,329 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:00:53,330 | INFO | openai._base_client | Retrying request to /chat/completions in 0.438439 seconds
+2026-06-17 10:00:54,236 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:00:54,238 | INFO | openai._base_client | Retrying request to /chat/completions in 0.899793 seconds
+2026-06-17 10:00:55,628 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:00:55,643 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\agents\classifier.py", line 53, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 27, in complete
+    return self._complete_openai(prompt, system_prompt)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 49, in _complete_openai
+    completion = client.chat.completions.create(
+        model=self.settings.openai_model,
+        messages=messages,
+        temperature=self.settings.temperature,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1251, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<52 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-06-17 10:00:55,704 | INFO | app.retrieval.retriever | Recuperados 0 fragmentos para la consulta
+2026-06-17 10:00:56,433 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:00:56,434 | INFO | openai._base_client | Retrying request to /chat/completions in 0.444646 seconds
+2026-06-17 10:00:57,336 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:00:57,340 | INFO | openai._base_client | Retrying request to /chat/completions in 0.864512 seconds
+2026-06-17 10:00:58,340 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:00:58,347 | ERROR | app.agents.writer_agent | Fallo el agente redactor
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\agents\writer_agent.py", line 74, in draft_answer
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 27, in complete
+    return self._complete_openai(prompt, system_prompt)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 49, in _complete_openai
+    completion = client.chat.completions.create(
+        model=self.settings.openai_model,
+        messages=messages,
+        temperature=self.settings.temperature,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1251, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<52 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-06-17 10:05:00,463 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:05:00,468 | INFO | openai._base_client | Retrying request to /chat/completions in 0.487641 seconds
+2026-06-17 10:05:01,096 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:05:01,096 | INFO | openai._base_client | Retrying request to /chat/completions in 0.975452 seconds
+2026-06-17 10:05:02,201 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:05:02,204 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\agents\classifier.py", line 53, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 27, in complete
+    return self._complete_openai(prompt, system_prompt)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 49, in _complete_openai
+    completion = client.chat.completions.create(
+        model=self.settings.openai_model,
+        messages=messages,
+        temperature=self.settings.temperature,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1251, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<52 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-06-17 10:05:02,220 | INFO | app.retrieval.retriever | Recuperados 0 fragmentos para la consulta
+2026-06-17 10:05:02,933 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:05:02,935 | INFO | openai._base_client | Retrying request to /chat/completions in 0.419258 seconds
+2026-06-17 10:05:03,491 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:05:03,493 | INFO | openai._base_client | Retrying request to /chat/completions in 0.904309 seconds
+2026-06-17 10:05:04,531 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-17 10:05:04,532 | ERROR | app.agents.writer_agent | Fallo el agente redactor
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\agents\writer_agent.py", line 74, in draft_answer
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 27, in complete
+    return self._complete_openai(prompt, system_prompt)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 49, in _complete_openai
+    completion = client.chat.completions.create(
+        model=self.settings.openai_model,
+        messages=messages,
+        temperature=self.settings.temperature,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1251, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<52 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\openai\_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-06-17 10:05:56,106 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 10:05:56,284 | ERROR | crewai.utilities.llm_utils | Error instantiating LLM from environment/fallback: ImportError: Error importing native provider: Missing credentials. Please pass an `api_key`, `workload_identity`, `admin_api_key`, or set the `OPENAI_API_KEY` or `OPENAI_ADMIN_KEY` environment variable.
+2026-06-17 10:11:14,222 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 10:11:56,668 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_16341759.pdf
+2026-06-17 10:11:56,719 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_28938793.pdf
+2026-06-17 10:11:56,719 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings BAAI/bge-m3
+2026-06-17 10:11:56,721 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 10:11:57,228 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-06-17 10:11:57,341 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:11:57,342 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-17 10:11:57,367 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 10:11:57,399 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 10:11:57,533 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:11:57,563 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 10:11:57,604 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 10:11:57,621 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from BAAI/bge-m3.
+2026-06-17 10:11:57,728 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:11:57,757 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 10:11:57,873 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:11:57,898 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-17 10:11:57,927 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-17 10:11:58,062 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:11:58,087 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 10:11:58,203 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:11:58,234 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 10:11:58,264 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 10:11:58,389 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:11:58,519 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:11:58,544 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 10:11:58,575 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 10:11:58,741 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-17 10:11:58,867 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:11:59,005 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/pytorch_model.bin "HTTP/1.1 302 Found"
+2026-06-17 10:16:00,749 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ~~~~~~~~~~~^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=new_compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+	debug_error_string = "NOT_FOUND:models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\agents\classifier.py", line 47, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-06-17 10:16:00,860 | INFO | app.retrieval.retriever | Recuperados 0 fragmentos para la consulta
+2026-06-17 10:16:01,842 | ERROR | app.agents.writer_agent | Fallo el agente redactor
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ~~~~~~~~~~~^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=new_compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+	debug_error_string = "NOT_FOUND:models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\agents\writer_agent.py", line 68, in draft_answer
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-06-17 10:16:23,427 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:23,549 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 10:16:23,761 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:23,808 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/main "HTTP/1.1 200 OK"
+2026-06-17 10:16:23,883 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:23,967 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/discussions?p=0 "HTTP/1.1 200 OK"
+2026-06-17 10:16:23,992 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:24,102 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/refs%2Fpr%2F130 "HTTP/1.1 200 OK"
+2026-06-17 10:16:24,108 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:24,220 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:24,222 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:24,248 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:24,276 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:24,329 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 10:16:24,385 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:24,412 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:24,519 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:24,545 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:24,659 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:24,684 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:24,821 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:24,933 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 10:16:25,053 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentencepiece.bpe.model "HTTP/1.1 302 Found"
+2026-06-17 10:16:34,341 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_16341759.pdf
+2026-06-17 10:16:34,387 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_28938793.pdf
+2026-06-17 10:16:34,387 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings BAAI/bge-m3
+2026-06-17 10:16:34,388 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 10:16:36,423 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:36,450 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:36,558 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:36,587 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:36,588 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from BAAI/bge-m3.
+2026-06-17 10:16:36,706 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:36,731 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:36,903 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:36,945 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-17 10:16:37,069 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:37,095 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:37,203 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:37,230 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:37,356 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:37,474 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:37,504 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:37,617 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:37,778 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 10:16:37,910 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/main "HTTP/1.1 200 OK"
+2026-06-17 10:16:38,327 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:38,335 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/discussions?p=0 "HTTP/1.1 200 OK"
+2026-06-17 10:16:38,715 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:38,829 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:38,959 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:39,079 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:39,112 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:39,153 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/refs%2Fpr%2F130 "HTTP/1.1 200 OK"
+2026-06-17 10:16:39,220 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:39,250 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:39,273 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:39,382 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:39,383 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 10:16:39,416 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:39,527 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:16:39,563 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 10:16:39,675 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 10:16:39,788 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 10:16:39,964 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentencepiece.bpe.model "HTTP/1.1 302 Found"
+2026-06-17 10:16:57,717 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
+2026-06-17 10:17:10,334 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
+2026-06-17 10:17:17,255 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-06-17 10:17:17,369 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:17:17,400 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-06-17 10:17:17,435 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-06-17 10:17:17,562 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-06-17 10:17:20,208 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 10:17:20,331 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:17:20,365 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-17 10:17:20,405 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-17 10:17:20,598 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 10:17:23,584 | INFO | app.vectorstore.chroma_store | Indexados 2 chunks en ChromaDB
+2026-06-17 10:17:23,619 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_290286.pdf
+2026-06-17 10:17:25,823 | INFO | app.vectorstore.chroma_store | Indexados 2 chunks en ChromaDB
+2026-06-17 10:17:25,848 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_293097.pdf
+2026-06-17 10:17:27,353 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:17:27,403 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_31052956.pdf
+2026-06-17 10:17:30,969 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 10:17:31,178 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 10:17:31,202 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:17:31,239 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_32723755.pdf
+2026-06-17 10:17:31,240 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-17 10:17:31,352 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 10:17:33,667 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:17:33,706 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_33610275.pdf
+2026-06-17 10:17:34,940 | INFO | app.vectorstore.chroma_store | Indexados 2 chunks en ChromaDB
+2026-06-17 10:17:34,955 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_290286.pdf
+2026-06-17 10:17:35,850 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:17:35,864 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_33804966.pdf
+2026-06-17 10:17:36,048 | INFO | app.ingestion.pdf_loader | Extraidos 12 chunks desde documento_35175471.pdf
+2026-06-17 10:17:36,856 | INFO | app.vectorstore.chroma_store | Indexados 2 chunks en ChromaDB
+2026-06-17 10:17:36,871 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_293097.pdf
+2026-06-17 10:17:38,270 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:17:38,306 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_31052956.pdf
+2026-06-17 10:17:39,517 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:17:39,529 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_32723755.pdf
+2026-06-17 10:17:40,979 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:17:40,989 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_33610275.pdf
+2026-06-17 10:17:42,556 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:17:42,559 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_33804966.pdf
+2026-06-17 10:17:42,730 | INFO | app.ingestion.pdf_loader | Extraidos 12 chunks desde documento_35175471.pdf
+2026-06-17 10:17:58,594 | INFO | app.vectorstore.chroma_store | Indexados 12 chunks en ChromaDB
+2026-06-17 10:17:58,835 | INFO | app.ingestion.pdf_loader | Extraidos 19 chunks desde documento_35187130.pdf
+2026-06-17 10:18:07,036 | INFO | app.vectorstore.chroma_store | Indexados 12 chunks en ChromaDB
+2026-06-17 10:18:07,083 | INFO | app.ingestion.pdf_loader | Extraidos 19 chunks desde documento_35187130.pdf
+2026-06-17 10:18:17,732 | INFO | app.vectorstore.chroma_store | Indexados 19 chunks en ChromaDB
+2026-06-17 10:18:17,901 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35200060.pdf
+2026-06-17 10:18:17,953 | INFO | app.ingestion.pdf_loader | Extraidos 3 chunks desde documento_35213121.pdf
+2026-06-17 10:18:21,613 | INFO | app.vectorstore.chroma_store | Indexados 3 chunks en ChromaDB
+2026-06-17 10:18:21,809 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35221944.pdf
+2026-06-17 10:18:21,887 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35222153.pdf
+2026-06-17 10:18:21,920 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_40438.pdf
+2026-06-17 10:18:23,851 | INFO | app.vectorstore.chroma_store | Indexados 2 chunks en ChromaDB
+2026-06-17 10:18:23,878 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_510723.pdf
+2026-06-17 10:18:25,552 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:18:25,573 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_510731.pdf
+2026-06-17 10:18:26,888 | INFO | app.vectorstore.chroma_store | Indexados 19 chunks en ChromaDB
+2026-06-17 10:18:27,043 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35200060.pdf
+2026-06-17 10:18:27,077 | INFO | app.ingestion.pdf_loader | Extraidos 3 chunks desde documento_35213121.pdf
+2026-06-17 10:18:28,252 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:18:28,314 | INFO | app.ingestion.pdf_loader | Extraidos 5 chunks desde documento_7070620.pdf
+2026-06-17 10:18:32,563 | INFO | app.vectorstore.chroma_store | Indexados 3 chunks en ChromaDB
+2026-06-17 10:18:32,738 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35221944.pdf
+2026-06-17 10:18:32,801 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35222153.pdf
+2026-06-17 10:18:32,817 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_40438.pdf
+2026-06-17 10:18:33,794 | INFO | app.vectorstore.chroma_store | Indexados 5 chunks en ChromaDB
+2026-06-17 10:18:34,673 | INFO | app.vectorstore.chroma_store | Indexados 2 chunks en ChromaDB
+2026-06-17 10:18:34,681 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_510723.pdf
+2026-06-17 10:18:35,437 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:18:35,442 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_510731.pdf
+2026-06-17 10:18:35,770 | INFO | app.vectorstore.chroma_store | Indexados 1 chunks en ChromaDB
+2026-06-17 10:18:35,789 | INFO | app.ingestion.pdf_loader | Extraidos 5 chunks desde documento_7070620.pdf
+2026-06-17 10:18:38,920 | INFO | app.vectorstore.chroma_store | Indexados 5 chunks en ChromaDB
+2026-06-17 10:20:31,684 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ~~~~~~~~~~~^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=new_compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+	debug_error_string = "NOT_FOUND:models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\agents\classifier.py", line 47, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-06-17 10:20:31,858 | INFO | app.retrieval.retriever | Recuperados 5 fragmentos para la consulta
+2026-06-17 10:20:32,647 | ERROR | app.agents.writer_agent | Fallo el agente redactor
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ~~~~~~~~~~~^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=new_compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+	debug_error_string = "NOT_FOUND:models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\agents\writer_agent.py", line 68, in draft_answer
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-06-17 10:24:44,493 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ~~~~~~~~~~~^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=new_compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+	debug_error_string = "NOT_FOUND:models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\agents\classifier.py", line 47, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-06-17 10:24:44,587 | INFO | app.retrieval.retriever | Recuperados 5 fragmentos para la consulta
+2026-06-17 10:24:45,204 | ERROR | app.agents.writer_agent | Fallo el agente redactor
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ~~~~~~~~~~~^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        request,
+        ^^^^^^^^
+    ...<4 lines>...
+        compression=new_compression,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.NOT_FOUND
+	details = "models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+	debug_error_string = "NOT_FOUND:models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\agents\writer_agent.py", line 68, in draft_answer
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.

@@ -1,0 +1,12 @@
+flowchart TD
+    U[Usuario] --> S[Streamlit UI]
+    S --> M[CrewAI Manager]
+    M --> C[Agente Clasificador]
+    M --> R[Agente Recuperador]
+    M --> W[Agente Redactor]
+    R --> K[ChromaDB]
+    K --> E[Embeddings BGE-M3]
+    E --> P[PDFs procesados]
+    W --> S
+    C --> W
+    R --> W
