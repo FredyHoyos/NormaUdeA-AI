@@ -24,6 +24,11 @@ class Settings(BaseSettings):
     gemini_model: str = "gemini-1.5-pro"
     temperature: float = 0.1
     bge_m3_model: str = "BAAI/bge-m3"
+    bge_m3_local_dir: Path = Field(default=Path("data/models/bge-m3"))
+    bge_m3_cache_dir: Path = Field(default=Path("data/models/.cache/huggingface"))
+    ocr_enabled: bool = True
+    ocr_lang: str = "spa+eng"
+    ocr_tesseract_cmd: str | None = None
     streamlit_page_title: str = "Copiloto Administrativo Agéntico UdeA"
     streamlit_page_icon: str = "🎓"
 
@@ -34,6 +39,7 @@ class Settings(BaseSettings):
         self.pdf_dir.mkdir(parents=True, exist_ok=True)
         self.chroma_dir.mkdir(parents=True, exist_ok=True)
         self.logs_dir.mkdir(parents=True, exist_ok=True)
+        self.bge_m3_cache_dir.mkdir(parents=True, exist_ok=True)
 
 
 @lru_cache(maxsize=1)

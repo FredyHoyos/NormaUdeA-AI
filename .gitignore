@@ -1,0 +1,13 @@
+.env
+
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local model caches (keep model folder, ignore transient HF cache)
+data/models/.cache/

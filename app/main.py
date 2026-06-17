@@ -15,13 +15,13 @@ import streamlit as st
 from app.agents.manager import CrewAIManager
 from app.config.settings import get_settings
 from app.core.logging_config import configure_logging
+from app.models import IngestionProgress
 from app.services.answer_service import AnswerService
 from app.ui.components import render_answer, render_ingestion_summary
 
 logger = logging.getLogger(__name__)
 
 
-@st.cache_resource(show_spinner=False)
 def get_service() -> AnswerService:
     settings = get_settings()
     configure_logging(settings.logs_dir)
@@ -45,8 +45,22 @@ def main() -> None:
         st.write(f"Base vectorial: {settings.chroma_dir}")
 
         if st.button("Indexar PDFs locales", type="primary"):
+            progress_bar = st.progress(0)
+            progress_status = st.empty()
+
+            def on_progress(progress: IngestionProgress) -> None:
+                progress_bar.progress(int(progress.progress_percent))
+                progress_status.info(
+                    f"{progress.message} | Archivos: {progress.files_processed}/{progress.total_files} | "
+                    f"Chunks: {progress.chunks_indexed}"
+                )
+
             with st.spinner("Indexando documentos locales..."):
-                summary = service.index_documents()
+                summary = service.index_documents(progress_callback=on_progress)
+            progress_bar.progress(100)
+            progress_status.success(
+                f"Indexacion finalizada | Archivos: {summary.files_processed} | Chunks: {summary.chunks_indexed}"
+            )
             st.success("Indexacion completada")
             render_ingestion_summary(summary)
 

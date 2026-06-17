@@ -2,6 +2,8 @@ streamlit
 crewai
 chromadb
 pymupdf
+pytesseract
+Pillow
 sentence-transformers
 pydantic>=2.7
 pydantic-settings>=2.2

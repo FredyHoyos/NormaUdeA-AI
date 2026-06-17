@@ -51,9 +51,41 @@ streamlit run app/main.py
 ## Variables de entorno
 
 - `LLM_PROVIDER=openai|gemini`
+- `LLM_PROVIDER=none` para modo local de contingencia (sin llamadas a API)
 - `OPENAI_API_KEY` o `GEMINI_API_KEY`
 - `OPENAI_MODEL` o `GEMINI_MODEL`
 - `PDF_DIR`, `CHROMA_DIR`, `CHUNK_SIZE`, `RETRIEVAL_K`
+- `BGE_M3_MODEL=BAAI/bge-m3`
+- `BGE_M3_LOCAL_DIR=data/models/bge-m3`
+- `BGE_M3_CACHE_DIR=data/models/.cache/huggingface`
+
+Modo estable de baja memoria (sin descarga de modelos):
+
+- `BGE_M3_MODEL=local-hash-384`
+- `OCR_ENABLED=true|false`
+- `OCR_LANG=spa+eng`
+- `OCR_TESSERACT_CMD=C:/Program Files/Tesseract-OCR/tesseract.exe`
+
+## OCR para PDFs escaneados
+
+Si un PDF no tiene texto seleccionable, la ingesta intenta OCR pagina por pagina.
+
+Requiere instalar Tesseract en el sistema operativo y tenerlo en `PATH`.
+
+Si no esta en `PATH`, configura `OCR_TESSERACT_CMD` con la ruta completa del ejecutable.
+
+- Windows: instala "Tesseract OCR" y reinicia la terminal.
+- Si no deseas OCR, usa `OCR_ENABLED=false`.
+
+## Modelo BGE-M3 portable
+
+Para evitar depender de descargas en cada arranque, descarga el modelo una vez y reutilizalo localmente:
+
+```bash
+.venv\Scripts\python.exe scripts/download_bge_m3.py
+```
+
+Luego la app cargara el modelo desde `BGE_M3_LOCAL_DIR` si esa carpeta existe.
 
 ## Ejemplos de preguntas
 

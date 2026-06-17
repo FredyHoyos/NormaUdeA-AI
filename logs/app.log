@@ -844,3 +844,1927 @@ Traceback (most recent call last):
   File "C:\Users\fredi\OneDrive\Desktop\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
     raise exceptions.from_grpc_error(exc) from exc
 google.api_core.exceptions.NotFound: 404 models/gemini-1.5-pro is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-06-17 12:51:08,061 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 12:54:10,153 | ERROR | asyncio | Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\fredi\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\fredi\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2026-06-17 12:56:23,042 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_16341759.pdf
+2026-06-17 12:56:23,158 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_28938793.pdf
+2026-06-17 12:56:23,161 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings BAAI/bge-m3
+2026-06-17 12:56:23,194 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 12:56:24,029 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-06-17 12:56:24,192 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 12:56:24,194 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-17 12:56:24,207 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 12:56:24,240 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 12:56:24,414 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 12:56:24,428 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 12:56:24,529 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 12:56:24,559 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from BAAI/bge-m3.
+2026-06-17 12:56:24,660 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 12:56:24,678 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 12:56:24,781 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 12:56:24,795 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-17 12:56:24,818 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-17 12:56:24,961 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 12:56:24,975 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 12:56:25,104 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 12:56:25,117 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 12:56:25,140 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 12:56:25,258 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 12:56:25,365 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 12:56:25,379 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 12:56:25,398 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 12:56:25,795 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-17 12:56:25,909 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-17 12:56:26,036 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/pytorch_model.bin "HTTP/1.1 302 Found"
+2026-06-17 13:18:28,805 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-17 13:18:29,178 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 13:18:29,434 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/main "HTTP/1.1 200 OK"
+2026-06-17 13:18:29,637 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/discussions?p=0 "HTTP/1.1 200 OK"
+2026-06-17 13:18:29,869 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/refs%2Fpr%2F130 "HTTP/1.1 200 OK"
+2026-06-17 13:18:29,990 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:18:30,123 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 13:18:33,419 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:18:33,609 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:18:33,852 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:18:34,229 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:18:34,352 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:18:34,612 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:18:36,350 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:18:38,494 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:18:38,521 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:18:38,754 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:18:38,784 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:18:38,912 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:18:38,929 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:18:39,073 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 13:18:39,193 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 13:18:39,744 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentencepiece.bpe.model "HTTP/1.1 302 Found"
+2026-06-17 13:18:56,773 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
+2026-06-17 13:19:25,666 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:19:25,798 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:19:25,818 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-06-17 13:19:25,840 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-06-17 13:19:25,944 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-06-17 13:19:30,305 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 13:19:30,439 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:19:30,474 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-17 13:19:30,507 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-17 13:19:31,384 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 13:22:05,427 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 13:25:16,615 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 13:25:34,198 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_16341759.pdf
+2026-06-17 13:25:34,301 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_28938793.pdf
+2026-06-17 13:25:34,301 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings BAAI/bge-m3
+2026-06-17 13:25:34,308 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 13:25:35,291 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:35,293 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-17 13:25:35,356 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:35,493 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:35,525 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:35,551 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from BAAI/bge-m3.
+2026-06-17 13:25:35,709 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:35,779 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:35,961 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:35,980 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-17 13:25:36,125 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:36,146 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:36,278 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:36,292 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:36,415 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:25:36,525 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:36,548 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:36,771 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-17 13:25:36,925 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 13:25:37,075 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/main "HTTP/1.1 200 OK"
+2026-06-17 13:25:37,226 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/discussions?p=0 "HTTP/1.1 200 OK"
+2026-06-17 13:25:37,406 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/refs%2Fpr%2F130 "HTTP/1.1 200 OK"
+2026-06-17 13:25:37,468 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:25:37,544 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:25:37,587 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:25:37,653 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 13:25:37,705 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:25:37,846 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:25:37,950 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:37,973 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:38,098 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:38,126 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:38,235 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:38,253 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:38,387 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:38,440 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:38,556 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 13:25:38,680 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 13:25:42,799 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 13:25:42,981 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:25:43,228 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-17 13:25:43,639 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 13:30:15,715 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 13:33:18,591 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_16341759.pdf
+2026-06-17 13:33:18,712 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_28938793.pdf
+2026-06-17 13:33:18,724 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-06-17 13:33:18,815 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 13:33:19,678 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:33:19,695 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 13:33:19,812 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 13:33:19,945 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:33:19,960 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 13:33:20,029 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 13:33:20,056 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-06-17 13:33:20,151 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:33:20,153 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-17 13:33:20,169 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 13:33:20,289 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:33:20,328 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md "HTTP/1.1 200 OK"
+2026-06-17 13:33:20,369 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md "HTTP/1.1 200 OK"
+2026-06-17 13:33:20,634 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:33:20,651 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 13:33:20,797 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:33:20,817 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:33:20,841 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:33:20,971 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:33:21,079 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:33:21,093 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:33:21,114 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:33:21,430 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 13:41:18,780 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 13:42:33,397 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 13:42:48,579 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_16341759.pdf
+2026-06-17 13:42:48,658 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_28938793.pdf
+2026-06-17 13:42:48,660 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-06-17 13:42:48,667 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 13:42:49,509 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:42:49,512 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-17 13:42:49,532 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 13:42:49,646 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:42:49,669 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 13:42:49,675 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-06-17 13:42:49,777 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:42:49,797 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 13:42:49,908 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:42:49,934 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md "HTTP/1.1 200 OK"
+2026-06-17 13:42:50,059 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:42:50,087 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 13:42:50,201 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:42:50,225 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:42:50,333 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:42:50,460 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:42:50,482 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:43:42,801 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 13:45:33,808 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_16341759.pdf
+2026-06-17 13:45:33,905 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_28938793.pdf
+2026-06-17 13:45:33,908 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-06-17 13:45:33,922 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 13:45:34,812 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:34,815 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-17 13:45:34,854 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:34,986 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:35,008 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:35,015 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-06-17 13:45:35,135 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:35,187 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:35,326 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:35,387 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md "HTTP/1.1 200 OK"
+2026-06-17 13:45:35,514 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:35,545 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:35,678 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:35,715 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:35,835 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:45:35,949 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:35,975 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:36,555 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:45:36,663 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:45:36,776 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:45:36,893 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 13:45:37,010 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:37,041 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:37,155 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:37,184 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:37,337 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:37,361 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:37,473 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:37,513 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:37,645 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:37,667 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:37,778 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 13:45:37,888 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 13:45:40,967 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-06-17 13:45:41,352 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 13:45:41,379 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-17 13:45:41,503 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-06-17 13:45:41,974 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_28938793.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:42,011 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_290286.pdf
+2026-06-17 13:45:42,208 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_290286.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:42,231 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_293097.pdf
+2026-06-17 13:45:42,335 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_293097.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:42,391 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_31052956.pdf
+2026-06-17 13:45:42,542 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_31052956.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:42,578 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_32723755.pdf
+2026-06-17 13:45:42,703 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_32723755.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:42,725 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_33610275.pdf
+2026-06-17 13:45:42,856 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_33610275.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:42,864 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_33804966.pdf
+2026-06-17 13:45:43,158 | INFO | app.ingestion.pdf_loader | Extraidos 12 chunks desde documento_35175471.pdf
+2026-06-17 13:45:44,161 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_35175471.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:44,239 | INFO | app.ingestion.pdf_loader | Extraidos 19 chunks desde documento_35187130.pdf
+2026-06-17 13:45:45,728 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_35187130.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:46,003 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35200060.pdf
+2026-06-17 13:45:46,070 | INFO | app.ingestion.pdf_loader | Extraidos 3 chunks desde documento_35213121.pdf
+2026-06-17 13:45:46,326 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_35213121.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:46,646 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35221944.pdf
+2026-06-17 13:45:46,755 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35222153.pdf
+2026-06-17 13:45:46,787 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_40438.pdf
+2026-06-17 13:45:46,966 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_40438.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:46,991 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_510723.pdf
+2026-06-17 13:45:47,129 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_510723.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:47,150 | INFO | app.ingestion.pdf_loader | Extraidos 1 chunks desde documento_510731.pdf
+2026-06-17 13:45:47,297 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_510731.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:45:47,357 | INFO | app.ingestion.pdf_loader | Extraidos 5 chunks desde documento_7070620.pdf
+2026-06-17 13:45:47,746 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_7070620.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:46:09,416 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.RESOURCE_EXHAUSTED
+	details = "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 50.746468826s."
+	debug_error_string = "RESOURCE_EXHAUSTED:You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 50.746468826s."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\agents\classifier.py", line 47, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 50.746468826s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 50
+}
+]
+2026-06-17 13:47:39,104 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_290286.pdf
+2026-06-17 13:47:39,718 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_290286.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:47:39,752 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_40438.pdf
+2026-06-17 13:47:40,076 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_40438.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:50:33,552 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_290286.pdf
+2026-06-17 13:50:34,033 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_290286.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    def _is_dimension_mismatch_error(error: Exception) -> bool:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:50:34,067 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_40438.pdf
+2026-06-17 13:50:34,288 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_40438.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    def _is_dimension_mismatch_error(error: Exception) -> bool:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:53:14,748 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_290286.pdf
+2026-06-17 13:53:15,214 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_290286.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.client.delete_collection(name=collection_name)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:53:15,245 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_40438.pdf
+2026-06-17 13:53:15,452 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_40438.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.client.delete_collection(name=collection_name)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:53:32,757 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_290286.pdf
+2026-06-17 13:53:32,960 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_290286.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.client.delete_collection(name=collection_name)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 13:53:32,987 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_40438.pdf
+2026-06-17 13:53:33,159 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_40438.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    self.client.delete_collection(name=collection_name)
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 14:00:25,138 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_290286.pdf
+2026-06-17 14:00:25,591 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_290286.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    metadata={"hnsw:space": "cosine"},
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 14:00:25,626 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_40438.pdf
+2026-06-17 14:00:25,865 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_40438.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 97, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 46, in upsert_chunks
+    metadata={"hnsw:space": "cosine"},
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 451, in upsert
+    self._client._upsert(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\chromadb\api\rust.py", line 478, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 1024, got 384
+2026-06-17 14:05:48,905 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35221944.pdf
+2026-06-17 14:05:49,022 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35222153.pdf
+2026-06-17 14:06:03,379 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.RESOURCE_EXHAUSTED
+	details = "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 56.740355932s."
+	debug_error_string = "RESOURCE_EXHAUSTED:You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 56.740355932s."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\agents\classifier.py", line 47, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 56.740355932s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 56
+}
+]
+2026-06-17 14:09:33,038 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35221944.pdf
+2026-06-17 14:09:33,148 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35222153.pdf
+2026-06-17 14:09:43,403 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.RESOURCE_EXHAUSTED
+	details = "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 16.708584773s."
+	debug_error_string = "RESOURCE_EXHAUSTED:You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 16.708584773s."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\agents\classifier.py", line 47, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 16.708584773s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 16
+}
+]
+2026-06-17 14:09:43,446 | INFO | app.retrieval.retriever | Recuperados 0 fragmentos para la consulta
+2026-06-17 14:09:44,131 | ERROR | app.agents.writer_agent | Fallo el agente redactor
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.RESOURCE_EXHAUSTED
+	details = "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 15.976264678s."
+	debug_error_string = "RESOURCE_EXHAUSTED:You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 15.976264678s."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\agents\writer_agent.py", line 68, in draft_answer
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 15.976264678s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 15
+}
+]
+2026-06-17 14:12:21,516 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 14:12:38,982 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35221944.pdf
+2026-06-17 14:12:39,103 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35222153.pdf
+2026-06-17 14:12:51,699 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.RESOURCE_EXHAUSTED
+	details = "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 8.404426228s."
+	debug_error_string = "RESOURCE_EXHAUSTED:You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 8.404426228s."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\agents\classifier.py", line 47, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 8.404426228s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 8
+}
+]
+2026-06-17 14:12:51,715 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings local desde data\models\bge-m3
+2026-06-17 14:12:51,720 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 14:12:51,721 | INFO | sentence_transformers.base.model | No modules.json found for data\models\bge-m3, initializing a new SentenceTransformer model.
+2026-06-17 14:12:51,723 | WARNING | sentence_transformers.util.decorators | The Transformer `cache_dir` argument is deprecated. Please pass `cache_dir` via `model_kwargs`, `processor_kwargs`, and/or `config_kwargs` instead.
+2026-06-17 14:18:38,026 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 14:18:42,866 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35221944.pdf
+2026-06-17 14:18:42,982 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35222153.pdf
+2026-06-17 14:18:50,582 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.RESOURCE_EXHAUSTED
+	details = "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 9.516704301s."
+	debug_error_string = "RESOURCE_EXHAUSTED:You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 9.516704301s."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\agents\classifier.py", line 47, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 9.516704301s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 9
+}
+]
+2026-06-17 14:18:50,605 | WARNING | app.embeddings.bge_m3 | Carpeta local de embeddings no valida o incompleta en data\models\bge-m3. Usando modelo remoto BAAI/bge-m3.
+2026-06-17 14:18:50,605 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings remoto BAAI/bge-m3
+2026-06-17 14:18:50,610 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 14:18:51,553 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:18:51,583 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 14:18:51,630 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 14:18:51,765 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:18:51,767 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-17 14:18:51,788 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 14:18:51,856 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 14:18:51,887 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from BAAI/bge-m3.
+2026-06-17 14:18:51,989 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:18:52,011 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 14:18:52,121 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:18:52,142 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-17 14:18:52,201 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-17 14:18:52,381 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:18:52,407 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 14:18:52,522 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:18:52,549 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 14:18:52,582 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 14:18:52,729 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:18:52,846 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:18:52,866 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 14:18:52,896 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 14:18:53,082 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-17 14:18:53,205 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:18:53,319 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/pytorch_model.bin "HTTP/1.1 302 Found"
+2026-06-17 14:41:55,602 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-17 14:41:55,775 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 14:41:55,979 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/main "HTTP/1.1 200 OK"
+2026-06-17 14:41:56,136 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/discussions?p=0 "HTTP/1.1 200 OK"
+2026-06-17 14:41:56,296 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/refs%2Fpr%2F130 "HTTP/1.1 200 OK"
+2026-06-17 14:41:56,482 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:41:56,588 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 14:41:57,094 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:41:57,228 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:41:57,338 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:41:57,458 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:41:57,564 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:41:57,585 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 14:41:57,623 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 14:41:57,766 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:41:57,786 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 14:41:57,932 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:41:57,954 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 14:41:58,079 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:41:58,094 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 14:41:58,323 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 14:41:58,438 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 14:41:58,550 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentencepiece.bpe.model "HTTP/1.1 302 Found"
+2026-06-17 14:47:51,275 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 14:53:51,346 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35221944.pdf
+2026-06-17 14:53:51,510 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35222153.pdf
+2026-06-17 14:54:01,907 | ERROR | app.agents.classifier | Fallo la clasificacion de intencion
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 55, in error_remapped_callable
+    return callable_(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 438, in result
+    raise self
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 1173, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\grpc\_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.RESOURCE_EXHAUSTED
+	details = "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 58.148668234s."
+	debug_error_string = "RESOURCE_EXHAUSTED:You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 58.148668234s."
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\agents\classifier.py", line 47, in classify
+    payload = self.llm_client.complete_json(prompt=prompt, system_prompt=system_prompt)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 33, in complete_json
+    response = self.complete(prompt=prompt, system_prompt=system_prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 29, in complete
+    return self._complete_gemini(prompt, system_prompt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\llm\client.py", line 69, in _complete_gemini
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 128, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 216, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 57, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 58.148668234s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, retry_delay {
+  seconds: 58
+}
+]
+2026-06-17 14:54:02,192 | WARNING | app.embeddings.bge_m3 | Carpeta local de embeddings no valida o incompleta en data\models\bge-m3. Usando modelo remoto BAAI/bge-m3.
+2026-06-17 14:54:02,192 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings remoto BAAI/bge-m3
+2026-06-17 14:54:02,198 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 14:54:02,997 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:03,016 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 14:54:03,123 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:03,124 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-17 14:54:03,235 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 14:54:03,265 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from BAAI/bge-m3.
+2026-06-17 14:54:03,374 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:03,392 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 14:54:03,506 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:03,536 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/README.md "HTTP/1.1 200 OK"
+2026-06-17 14:54:03,677 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:03,704 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/modules.json "HTTP/1.1 200 OK"
+2026-06-17 14:54:03,831 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:03,855 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 14:54:03,974 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:54:04,081 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:04,099 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 14:54:04,246 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-06-17 14:54:04,405 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 14:54:04,534 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/main "HTTP/1.1 200 OK"
+2026-06-17 14:54:04,669 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/discussions?p=0 "HTTP/1.1 200 OK"
+2026-06-17 14:54:04,708 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:54:04,807 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/commits/refs%2Fpr%2F130 "HTTP/1.1 200 OK"
+2026-06-17 14:54:04,820 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:54:04,918 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:54:04,926 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:54:05,027 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:54:05,033 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/refs%2Fpr%2F130/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 14:54:05,130 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:05,158 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 14:54:05,277 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:05,298 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 14:54:05,413 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:05,433 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/config.json "HTTP/1.1 200 OK"
+2026-06-17 14:54:05,556 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:54:05,573 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-17 14:54:05,691 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-17 14:54:05,799 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-17 14:54:05,924 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/sentencepiece.bpe.model "HTTP/1.1 302 Found"
+2026-06-17 14:54:48,531 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
+2026-06-17 14:55:14,499 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-06-17 14:55:14,600 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:55:14,625 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-06-17 14:55:14,700 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-06-17 14:55:14,815 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-06-17 14:55:18,839 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 14:55:18,970 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-m3/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 14:55:19,222 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-17 14:55:19,250 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-m3/5617a9f61b028005a4858fdac845db406aefb181/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-17 14:55:19,451 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-m3 "HTTP/1.1 200 OK"
+2026-06-17 15:01:27,080 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 15:01:34,126 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35221944.pdf
+2026-06-17 15:01:34,237 | INFO | app.ingestion.pdf_loader | Extraidos 0 chunks desde documento_35222153.pdf
+2026-06-17 15:21:25,278 | INFO | app.ingestion.pdf_loader | Extraidos 4 chunks desde documento_35221944.pdf
+2026-06-17 15:21:25,294 | WARNING | app.embeddings.bge_m3 | Carpeta local de embeddings no valida o incompleta en data\models\bge-m3. Usando modelo remoto intfloat/multilingual-e5-small.
+2026-06-17 15:21:25,294 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings remoto intfloat/multilingual-e5-small
+2026-06-17 15:21:25,363 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 15:21:26,370 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:26,423 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/intfloat/multilingual-e5-small/614241f622f53c4eeff9890bdc4f31cfecc418b3/modules.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:26,587 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/config_sentence_transformers.json "HTTP/1.1 404 Not Found"
+2026-06-17 15:21:26,591 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from intfloat/multilingual-e5-small.
+2026-06-17 15:21:26,980 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/config_sentence_transformers.json "HTTP/1.1 404 Not Found"
+2026-06-17 15:21:27,106 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:27,393 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/intfloat/multilingual-e5-small/614241f622f53c4eeff9890bdc4f31cfecc418b3/README.md "HTTP/1.1 200 OK"
+2026-06-17 15:21:27,516 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:27,517 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-17 15:21:27,578 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/intfloat/multilingual-e5-small/614241f622f53c4eeff9890bdc4f31cfecc418b3/modules.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:27,764 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:28,036 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/intfloat/multilingual-e5-small/614241f622f53c4eeff9890bdc4f31cfecc418b3/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:28,211 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 15:21:28,326 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:28,859 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/intfloat/multilingual-e5-small/614241f622f53c4eeff9890bdc4f31cfecc418b3/config.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:29,358 | ERROR | app.embeddings.bge_m3 | Fallo cargando intfloat/multilingual-e5-small. Reintentando con fallback sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\embeddings\bge_m3.py", line 55, in _get_model
+    self.model = SentenceTransformer(self.model_name, cache_folder=self.cache_folder)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\sentence_transformer\model.py", line 188, in __init__
+    super().__init__(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 216, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1002, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1208, in _load_config_modules
+    module = module_class.load(
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 2030, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 87, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 654, in __init__
+    self.model = self._load_model(
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 1736, in _load_model
+    return model_cls.from_pretrained(model_name_or_path, config=config, **model_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\models\auto\auto_factory.py", line 406, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4327, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4445, in _load_pretrained_model
+    file_pointer = safe_open(file, framework="pt", device="cpu")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: El archivo de paginación es demasiado pequeño para completar la operación. (os error 1455)
+2026-06-17 15:21:29,387 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 15:21:29,690 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:29,714 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:29,867 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:29,893 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:29,901 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-06-17 15:21:30,040 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:30,326 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:30,446 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:30,727 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md "HTTP/1.1 200 OK"
+2026-06-17 15:21:30,855 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:31,142 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:31,585 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:31,622 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:31,730 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 15:21:32,166 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:32,224 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:32,356 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 15:21:32,370 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_35221944.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\embeddings\bge_m3.py", line 55, in _get_model
+    self.model = SentenceTransformer(self.model_name, cache_folder=self.cache_folder)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\sentence_transformer\model.py", line 188, in __init__
+    super().__init__(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 216, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1002, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1208, in _load_config_modules
+    module = module_class.load(
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 2030, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 87, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 654, in __init__
+    self.model = self._load_model(
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 1736, in _load_model
+    return model_cls.from_pretrained(model_name_or_path, config=config, **model_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\models\auto\auto_factory.py", line 406, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4327, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4445, in _load_pretrained_model
+    file_pointer = safe_open(file, framework="pt", device="cpu")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: El archivo de paginación es demasiado pequeño para completar la operación. (os error 1455)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 111, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 67, in upsert_chunks
+    embeddings = self.embeddings.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\embeddings\bge_m3.py", line 71, in embed_documents
+    vectors = self._get_model().encode(texts, normalize_embeddings=True, show_progress_bar=False)
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\embeddings\bge_m3.py", line 63, in _get_model
+    self.model = SentenceTransformer(_FALLBACK_MODEL_NAME, cache_folder=self.cache_folder)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\sentence_transformer\model.py", line 188, in __init__
+    super().__init__(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 216, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1002, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1208, in _load_config_modules
+    module = module_class.load(
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 2030, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 87, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 654, in __init__
+    self.model = self._load_model(
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 1736, in _load_model
+    return model_cls.from_pretrained(model_name_or_path, config=config, **model_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\models\auto\auto_factory.py", line 406, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4229, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 678, in _get_resolved_checkpoint_files
+    resolved_archive_file = cached_file(pretrained_model_name_or_path, filename, **cached_file_kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\utils\hub.py", line 293, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\utils\hub.py", line 527, in cached_files
+    raise e
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\utils\hub.py", line 437, in cached_files
+    hf_hub_download(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\huggingface_hub\file_download.py", line 1015, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\huggingface_hub\file_download.py", line 1237, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\huggingface_hub\file_download.py", line 1850, in _download_to_tmp_and_move
+    with tmp_path.open("wb") as f:
+         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\fredi\\OneDrive\\AppData\\OneDrive\\Desktop\\Hackaton\\NormaUdeA-AI\\data\\models\\.cache\\huggingface\\models--sentence-transformers--paraphrase-multilingual-MiniLM-L12-v2\\blobs\\eaa086f0ffee582aeb45b36e34cdd1fe2d6de2bef61f8a559a1bbc9bd955917b.cd03f333.incomplete'
+2026-06-17 15:21:34,841 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_35222153.pdf
+2026-06-17 15:21:34,844 | WARNING | app.embeddings.bge_m3 | Carpeta local de embeddings no valida o incompleta en data\models\bge-m3. Usando modelo remoto intfloat/multilingual-e5-small.
+2026-06-17 15:21:34,845 | INFO | app.embeddings.bge_m3 | Cargando modelo de embeddings remoto intfloat/multilingual-e5-small
+2026-06-17 15:21:34,852 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 15:21:34,969 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:34,996 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/intfloat/multilingual-e5-small/614241f622f53c4eeff9890bdc4f31cfecc418b3/modules.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:35,109 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/config_sentence_transformers.json "HTTP/1.1 404 Not Found"
+2026-06-17 15:21:35,112 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from intfloat/multilingual-e5-small.
+2026-06-17 15:21:35,232 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/config_sentence_transformers.json "HTTP/1.1 404 Not Found"
+2026-06-17 15:21:35,338 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:35,369 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/intfloat/multilingual-e5-small/614241f622f53c4eeff9890bdc4f31cfecc418b3/README.md "HTTP/1.1 200 OK"
+2026-06-17 15:21:35,485 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:35,502 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/intfloat/multilingual-e5-small/614241f622f53c4eeff9890bdc4f31cfecc418b3/modules.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:35,620 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:35,645 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/intfloat/multilingual-e5-small/614241f622f53c4eeff9890bdc4f31cfecc418b3/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:35,759 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 15:21:35,885 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/intfloat/multilingual-e5-small/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:36,151 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/intfloat/multilingual-e5-small/614241f622f53c4eeff9890bdc4f31cfecc418b3/config.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:37,216 | ERROR | app.embeddings.bge_m3 | Fallo cargando intfloat/multilingual-e5-small. Reintentando con fallback sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\embeddings\bge_m3.py", line 55, in _get_model
+    self.model = SentenceTransformer(self.model_name, cache_folder=self.cache_folder)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\sentence_transformer\model.py", line 188, in __init__
+    super().__init__(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 216, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1002, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1208, in _load_config_modules
+    module = module_class.load(
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 2030, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 87, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 654, in __init__
+    self.model = self._load_model(
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 1736, in _load_model
+    return model_cls.from_pretrained(model_name_or_path, config=config, **model_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\models\auto\auto_factory.py", line 406, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4327, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4445, in _load_pretrained_model
+    file_pointer = safe_open(file, framework="pt", device="cpu")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: El archivo de paginación es demasiado pequeño para completar la operación. (os error 1455)
+2026-06-17 15:21:37,226 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-06-17 15:21:37,683 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:37,703 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:37,808 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:37,832 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:37,837 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-06-17 15:21:37,960 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:37,988 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:38,465 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:38,490 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md "HTTP/1.1 200 OK"
+2026-06-17 15:21:38,612 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:38,641 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:39,596 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:39,627 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:39,731 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-17 15:21:39,833 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-17 15:21:39,858 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+2026-06-17 15:21:40,011 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-06-17 15:21:40,024 | ERROR | app.domain.local_pdf_source | Error indexando data\pdfs\documento_35222153.pdf
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\embeddings\bge_m3.py", line 55, in _get_model
+    self.model = SentenceTransformer(self.model_name, cache_folder=self.cache_folder)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\sentence_transformer\model.py", line 188, in __init__
+    super().__init__(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 216, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1002, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1208, in _load_config_modules
+    module = module_class.load(
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 2030, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 87, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 654, in __init__
+    self.model = self._load_model(
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 1736, in _load_model
+    return model_cls.from_pretrained(model_name_or_path, config=config, **model_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\models\auto\auto_factory.py", line 406, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4327, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4445, in _load_pretrained_model
+    file_pointer = safe_open(file, framework="pt", device="cpu")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: El archivo de paginación es demasiado pequeño para completar la operación. (os error 1455)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\domain\local_pdf_source.py", line 111, in index_directory
+    indexed = self.knowledge_base.upsert_chunks(chunks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\vectorstore\chroma_store.py", line 67, in upsert_chunks
+    embeddings = self.embeddings.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\embeddings\bge_m3.py", line 71, in embed_documents
+    vectors = self._get_model().encode(texts, normalize_embeddings=True, show_progress_bar=False)
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\app\embeddings\bge_m3.py", line 63, in _get_model
+    self.model = SentenceTransformer(_FALLBACK_MODEL_NAME, cache_folder=self.cache_folder)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 41, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\sentence_transformer\model.py", line 188, in __init__
+    super().__init__(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 216, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1002, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 1208, in _load_config_modules
+    module = module_class.load(
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 2030, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\util\decorators.py", line 87, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 654, in __init__
+    self.model = self._load_model(
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\sentence_transformers\base\modules\transformer.py", line 1736, in _load_model
+    return model_cls.from_pretrained(model_name_or_path, config=config, **model_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\models\auto\auto_factory.py", line 406, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 4229, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\modeling_utils.py", line 678, in _get_resolved_checkpoint_files
+    resolved_archive_file = cached_file(pretrained_model_name_or_path, filename, **cached_file_kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\utils\hub.py", line 293, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\utils\hub.py", line 527, in cached_files
+    raise e
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\transformers\utils\hub.py", line 437, in cached_files
+    hf_hub_download(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\huggingface_hub\file_download.py", line 1015, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\huggingface_hub\file_download.py", line 1237, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "C:\Users\fredi\OneDrive\AppData\OneDrive\Desktop\Hackaton\NormaUdeA-AI\.venv\Lib\site-packages\huggingface_hub\file_download.py", line 1850, in _download_to_tmp_and_move
+    with tmp_path.open("wb") as f:
+         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fredi\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\fredi\\OneDrive\\AppData\\OneDrive\\Desktop\\Hackaton\\NormaUdeA-AI\\data\\models\\.cache\\huggingface\\models--sentence-transformers--paraphrase-multilingual-MiniLM-L12-v2\\blobs\\eaa086f0ffee582aeb45b36e34cdd1fe2d6de2bef61f8a559a1bbc9bd955917b.1c810d6f.incomplete'
+2026-06-17 15:28:11,058 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 15:28:18,563 | INFO | app.ingestion.pdf_loader | Extraidos 4 chunks desde documento_35221944.pdf
+2026-06-17 15:28:18,694 | INFO | app.vectorstore.chroma_store | Indexados 4 chunks en ChromaDB
+2026-06-17 15:28:20,783 | INFO | app.ingestion.pdf_loader | Extraidos 2 chunks desde documento_35222153.pdf
+2026-06-17 15:28:20,833 | INFO | app.vectorstore.chroma_store | Indexados 2 chunks en ChromaDB
+2026-06-17 15:28:40,043 | INFO | app.retrieval.retriever | Recuperados 5 fragmentos para la consulta
+2026-06-17 15:32:25,837 | INFO | app.retrieval.retriever | Recuperados 5 fragmentos para la consulta

@@ -23,6 +23,8 @@ class LLMClient:
         self.provider = settings.llm_provider.lower().strip()
 
     def complete(self, prompt: str, system_prompt: str = "") -> LLMResponse:
+        if self.provider in {"none", "local"}:
+            return LLMResponse(text="{}", raw=None)
         if self.provider == "openai":
             return self._complete_openai(prompt, system_prompt)
         if self.provider == "gemini":

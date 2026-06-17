@@ -46,3 +46,13 @@ class IngestionSummary(BaseModel):
     files_processed: int = 0
     chunks_indexed: int = 0
     errors: list[str] = Field(default_factory=list)
+
+
+class IngestionProgress(BaseModel):
+    stage: str
+    message: str
+    progress_percent: float = 0.0
+    current_file: str | None = None
+    total_files: int = 0
+    files_processed: int = 0
+    chunks_indexed: int = 0

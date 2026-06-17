@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import logging
-from pathlib import Path
 
 import chromadb
 
@@ -15,15 +14,49 @@ logger = logging.getLogger(__name__)
 class ChromaKnowledgeBase:
     def __init__(self, settings: Settings, embeddings: BGEEmbeddings | None = None) -> None:
         self.settings = settings
-        self.embeddings = embeddings or BGEEmbeddings(settings.bge_m3_model)
+        self.embeddings = embeddings or BGEEmbeddings(
+            model_name=settings.bge_m3_model,
+            local_model_dir=settings.bge_m3_local_dir,
+            cache_folder=settings.bge_m3_cache_dir,
+        )
         self.client = chromadb.PersistentClient(path=str(settings.chroma_dir))
+        self.collection_name: str | None = None
+        self.collection = None
+
+    def _build_collection_name(self, embedding_dimension: int) -> str:
+        # Separa colecciones por dimension real para evitar mezclar 384 y 1024.
+        return f"{self.settings.chroma_collection}__dim_{embedding_dimension}"
+
+    def _get_collection(self, embedding_dimension: int):
+        self.collection_name = self._build_collection_name(embedding_dimension)
         self.collection = self.client.get_or_create_collection(
-            name=settings.chroma_collection,
+            name=self.collection_name,
             metadata={"hnsw:space": "cosine"},
         )
+        return self.collection
 
     def count(self) -> int:
+        if self.collection is None:
+            return 0
         return int(self.collection.count())
+
+    def _reset_collection(self, embedding_dimension: int) -> None:
+        collection_name = self._build_collection_name(embedding_dimension)
+        logger.warning(
+            "Recreando coleccion de Chroma '%s' por incompatibilidad de embeddings",
+            collection_name,
+        )
+        self.client.delete_collection(name=collection_name)
+        self.collection = self.client.get_or_create_collection(
+            name=collection_name,
+            metadata={"hnsw:space": "cosine"},
+        )
+        self.collection_name = collection_name
+
+    @staticmethod
+    def _is_dimension_mismatch_error(error: Exception) -> bool:
+        message = str(error).lower()
+        return "expecting embedding with dimension" in message and "got" in message
 
     def upsert_chunks(self, chunks: list[DocumentChunk]) -> int:
         if not chunks:
@@ -32,6 +65,8 @@ class ChromaKnowledgeBase:
         texts = [chunk.text for chunk in chunks]
         ids = [chunk.chunk_id for chunk in chunks]
         embeddings = self.embeddings.embed_documents(texts)
+        embedding_dimension = len(embeddings[0])
+        collection = self._get_collection(embedding_dimension)
         metadatas = [
             {
                 "source_name": chunk.source_name,
@@ -43,17 +78,39 @@ class ChromaKnowledgeBase:
             for chunk in chunks
         ]
 
-        self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+        try:
+            collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+        except Exception as exc:
+            if not self._is_dimension_mismatch_error(exc):
+                raise
+
+            # Si el modelo de embeddings cambio desde la ultima indexacion,
+            # Chroma mantiene la dimension antigua en disco. Reiniciamos y reintentamos.
+            self._reset_collection(embedding_dimension)
+            self.collection.upsert(ids=ids, documents=texts, embeddings=embeddings, metadatas=metadatas)
+
         logger.info("Indexados %s chunks en ChromaDB", len(chunks))
         return len(chunks)
 
     def query(self, query: str, top_k: int | None = None) -> list[RetrievalHit]:
-        if self.count() == 0:
-            return []
-
         limit = top_k or self.settings.retrieval_k
         query_embedding = self.embeddings.embed_query(query)
-        result = self.collection.query(query_embeddings=[query_embedding], n_results=limit)
+        embedding_dimension = len(query_embedding)
+        collection = self._get_collection(embedding_dimension)
+        if int(collection.count()) == 0:
+            return []
+
+        try:
+            result = collection.query(query_embeddings=[query_embedding], n_results=limit)
+        except Exception as exc:
+            if self._is_dimension_mismatch_error(exc):
+                logger.warning(
+                    "Dimension mismatch al consultar '%s' (dim=%s). Se devuelve contexto vacio para evitar fallo.",
+                    self.collection_name,
+                    embedding_dimension,
+                )
+                return []
+            raise
 
         hits: list[RetrievalHit] = []
         documents = result.get("documents", [[]])[0]
