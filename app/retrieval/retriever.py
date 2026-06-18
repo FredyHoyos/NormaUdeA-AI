@@ -34,8 +34,26 @@ class Retriever:
         blocks: list[str] = []
         for index, hit in enumerate(hits, start=1):
             page_text = f"p. {hit.page_number}" if hit.page_number else "pagina no identificada"
+            metadata_parts: list[str] = []
+            metadata = hit.metadata or {}
+
+            numero = str(metadata.get("db_numero") or "").strip()
+            tipo = str(metadata.get("db_tipo_documento") or "").strip()
+            asunto = str(metadata.get("db_asunto") or "").strip()
+            fecha = str(metadata.get("db_fecha_expedicion") or "").strip()
+
+            if numero:
+                metadata_parts.append(f"numero={numero}")
+            if tipo:
+                metadata_parts.append(f"tipo={tipo}")
+            if fecha:
+                metadata_parts.append(f"fecha={fecha}")
+            if asunto:
+                metadata_parts.append(f"asunto={asunto[:120]}")
+
+            metadata_line = f"\nMeta: {' | '.join(metadata_parts)}" if metadata_parts else ""
             blocks.append(
-                f"[{index}] Fuente: {hit.source_name} | {page_text} | score={hit.score:.3f}\n{hit.text.strip()}"
+                f"[{index}] Fuente: {hit.source_name} | {page_text} | score={hit.score:.3f}{metadata_line}\n{hit.text.strip()}"
             )
         context = "\n\n".join(blocks)
         return context[: self.settings.max_context_chars]

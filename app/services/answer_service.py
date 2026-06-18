@@ -21,6 +21,9 @@ class AnswerService:
     def index_documents(self, progress_callback: Callable[[IngestionProgress], None] | None = None) -> IngestionSummary:
         return self.manager.index_local_pdfs(progress_callback=progress_callback)
 
+    def indexed_chunks_count(self) -> int:
+        return self.manager.indexed_chunks_count()
+
     def answer(self, question: str, chat_history: list[dict[str, str]] | None = None) -> AnswerPayload:
         t0 = time.perf_counter()
         answer = self.manager.answer(question, chat_history=chat_history)

@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     ollama_timeout_seconds: int = 120
     temperature: float = 0.1
     bge_m3_model: str = "BAAI/bge-m3"
-    bge_m3_local_dir: Path = Field(default=Path("data/models/bge-m3"))
+    bge_m3_local_dir: Path | None = None
     bge_m3_cache_dir: Path = Field(default=Path("data/models/.cache/huggingface"))
     reranker_enabled: bool = True
     reranker_model: str = "BAAI/bge-reranker-v2-m3"
@@ -39,9 +39,25 @@ class Settings(BaseSettings):
     ocr_enabled: bool = True
     ocr_lang: str = "spa+eng"
     ocr_tesseract_cmd: str | None = None
+    ocr_tessdata_prefix: str | None = None
+    supabase_url: str | None = None
+    supabase_service_role_key: str | None = None
+    supabase_table_name: str = "normativas_udea"
+    supabase_pdf_url_column: str = "url_pdf"
+    supabase_select_columns: str = "id,numero,tipo_documento,asunto,fecha_expedicion,url_pdf,fecha_rastreo,resuelve"
+    supabase_document_number_column: str = "numero"
+    supabase_subject_column: str = "asunto"
+    supabase_pdf_timeout_seconds: int = 120
+    supabase_index_state_path: Path = Field(default=Path("data/ingestion/supabase_index_state.json"))
+    supabase_use_resuelve_fallback: bool = True
+    supabase_resuelve_max_chars: int = 1200
     streamlit_page_title: str = "Copiloto Administrativo Agéntico UdeA"
     streamlit_page_icon: str = "🎓"
     analytics_db_path: Path = Field(default=Path("data/analytics.db"))
+
+    @property
+    def supabase_table(self) -> str:
+        return self.supabase_table_name
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
@@ -51,6 +67,7 @@ class Settings(BaseSettings):
         self.chroma_dir.mkdir(parents=True, exist_ok=True)
         self.logs_dir.mkdir(parents=True, exist_ok=True)
         self.bge_m3_cache_dir.mkdir(parents=True, exist_ok=True)
+        self.supabase_index_state_path.parent.mkdir(parents=True, exist_ok=True)
 
 
 @lru_cache(maxsize=1)

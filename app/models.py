@@ -46,6 +46,8 @@ class AnswerPayload(BaseModel):
 class IngestionSummary(BaseModel):
     files_processed: int = 0
     chunks_indexed: int = 0
+    reused_files: int = 0
+    fallback_files: int = 0
     errors: list[str] = Field(default_factory=list)
 
 

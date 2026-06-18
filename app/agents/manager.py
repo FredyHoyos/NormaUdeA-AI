@@ -11,7 +11,7 @@ from app.agents.classifier import IntentClassifierAgent
 from app.agents.retriever_agent import RetrieverAgent
 from app.agents.writer_agent import WriterAgent
 from app.config.settings import Settings
-from app.domain.local_pdf_source import LocalPDFSource
+from app.domain.supabase_pdf_source import SupabasePDFSource
 from app.llm.client import LLMClient
 from app.llm.crewai_adapter import build_crewai_llm
 from app.models import AnswerPayload, IngestionProgress, IngestionSummary, QuestionIntent, RetrievalHit
@@ -26,7 +26,7 @@ class CrewAIManager:
         self.settings = settings or Settings()
         self.llm_client = LLMClient(self.settings)
         self.knowledge_base = ChromaKnowledgeBase(self.settings)
-        self.document_source = LocalPDFSource(self.settings, self.knowledge_base)
+        self.document_source = SupabasePDFSource(self.settings, self.knowledge_base)
         self.retriever = Retriever(self.document_source, self.settings, llm_client=self.llm_client)
         self.crew_llm = build_crewai_llm(self.settings)
         self.classifier_agent = IntentClassifierAgent(self.settings, self.llm_client, crew_llm=self.crew_llm)
@@ -38,7 +38,11 @@ class CrewAIManager:
         pdf_dir: Path | None = None,
         progress_callback: Callable[[IngestionProgress], None] | None = None,
     ) -> IngestionSummary:
-        return self.document_source.index_directory(pdf_dir, progress_callback=progress_callback)
+        _ = pdf_dir
+        return self.document_source.index_directory(progress_callback=progress_callback)
+
+    def indexed_chunks_count(self) -> int:
+        return self.knowledge_base.count_all()
 
     def answer(self, question: str, chat_history: list[dict[str, str]] | None = None) -> AnswerPayload:
         if self.crew_llm is not None and self._agents_ready():

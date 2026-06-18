@@ -40,6 +40,17 @@ class ChromaKnowledgeBase:
             return 0
         return int(self.collection.count())
 
+    def count_all(self) -> int:
+        prefix = f"{self.settings.chroma_collection}__dim_"
+        total = 0
+        try:
+            for collection in self.client.list_collections():
+                if getattr(collection, "name", "").startswith(prefix):
+                    total += int(collection.count())
+        except Exception:
+            return 0
+        return total
+
     def _reset_collection(self, embedding_dimension: int) -> None:
         collection_name = self._build_collection_name(embedding_dimension)
         logger.warning(
