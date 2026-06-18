@@ -1,0 +1,3 @@
+[server]
+# Evita errores ruidosos de watcher con imports lazy de transformers (torchvision opcional)
+fileWatcherType = "none"
