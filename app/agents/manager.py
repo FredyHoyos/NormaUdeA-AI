@@ -45,12 +45,17 @@ class CrewAIManager:
         return self.knowledge_base.count_all()
 
     def answer(self, question: str, chat_history: list[dict[str, str]] | None = None) -> AnswerPayload:
+        intent = self.classifier_agent.classify(question, chat_history=chat_history)
+
+        if not intent.needs_retrieval:
+            return self._answer_conversational(question, intent, chat_history)
+
         if self.crew_llm is not None and self._agents_ready():
             try:
                 return self._answer_with_crew(question, chat_history)
             except Exception as exc:
                 logger.warning("CrewAI fallo (%s), usando orquestacion directa", exc)
-        return self._answer_direct(question, chat_history)
+        return self._answer_direct(question, intent, chat_history)
 
     def _agents_ready(self) -> bool:
         return all([
@@ -198,8 +203,43 @@ Devuelve un JSON con:
             pass
         return None
 
-    def _answer_direct(self, question: str, chat_history: list[dict[str, str]] | None = None) -> AnswerPayload:
-        intent = self.classifier_agent.classify(question, chat_history=chat_history)
+    def _answer_conversational(self, question: str, intent: QuestionIntent, chat_history: list[dict[str, str]] | None = None) -> AnswerPayload:
+        history = self._format_chat_history_for_task(chat_history)
+        prompt = f"""
+Historial de la conversacion:
+{history}
+
+Pregunta del usuario: {question}
+
+Responde de forma natural, amigable y conversacional en español.
+"""
+        system = (
+            "Eres el Asesor Estudiantil Digital de la Universidad de Antioquia. "
+            "Eres amigable, cercano y respondes en español. "
+            "Cuando te saluden, agradezcan o se despidan, responde de forma cordial. "
+            "Cuando pregunten algo general sobre la universidad, responde con lo que sepas "
+            "y sugiere buscar en los documentos para informacion mas precisa. "
+            "No inventes citas ni referencias a documentos."
+        )
+        try:
+            response = self.llm_client.complete(prompt=prompt, system_prompt=system)
+            answer_text = response.text.strip() or "¿En qué puedo ayudarte hoy?"
+            return AnswerPayload(
+                answer=answer_text,
+                intent=intent,
+                confidence=0.9,
+                notes=["Respuesta conversacional sin recuperacion documental."],
+            )
+        except Exception as exc:
+            logger.exception("Falló la respuesta conversacional")
+            return AnswerPayload(
+                answer="¿En qué puedo ayudarte hoy?",
+                intent=intent,
+                confidence=0.5,
+                notes=[f"Respuesta conversacional de contingencia: {exc}"],
+            )
+
+    def _answer_direct(self, question: str, intent: QuestionIntent, chat_history: list[dict[str, str]] | None = None) -> AnswerPayload:
         hits = self.retriever_agent.recover(question) if intent.needs_retrieval else []
         context = self.retriever.build_context(hits)
         answer = self.writer_agent.draft_answer(question, intent, context, hits, chat_history=chat_history)
