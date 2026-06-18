@@ -9,8 +9,15 @@ __pycache__/
 
 # Local model caches (keep model folder, ignore transient HF cache)
 data/models/.cache/
-/.env
-/**/__pycache__
-/logs
-/data/chroma
-/data/chroma
+
+# Bases de datos vectoriales locales de Chroma
+data/chroma/
+*.bin
+*.sqlite3
+
+# Archivos de registro del sistema
+logs/
+*.log
+
+# Instaladores o paquetes de Windows
+*.msixbundle
