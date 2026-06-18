@@ -5,7 +5,7 @@ description = "Copiloto Administrativo Agéntico UdeA"
 requires-python = ">=3.10"
 dependencies = [
     "streamlit",
-    "crewai",
+    "crewai[google-genai]",
     "chromadb",
     "pymupdf",
     "sentence-transformers",
@@ -16,4 +16,6 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "pytest>=8.0.0",
     "numpy>=1.26.0",
+    "pytesseract>=0.3.13",
+    "torchvision",
 ]

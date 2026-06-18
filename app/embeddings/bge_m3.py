@@ -55,10 +55,14 @@ class BGEEmbeddings:
 
     @staticmethod
     def _prepare_hf_runtime() -> None:
-        # Evita rutas de descarga acelerada en Rust que en Windows pueden fallar por memoria.
         os.environ.setdefault("HF_HUB_ENABLE_HF_TRANSFER", "0")
         os.environ.setdefault("HF_HUB_DISABLE_XET", "1")
         os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+
+    @staticmethod
+    def _device() -> str:
+        device = os.environ.get("SENTENCE_TRANSFORMERS_DEVICE", "").lower().strip()
+        return device if device in ("cpu", "cuda", "mps") else "cpu"
 
     def _has_local_model_files(self) -> bool:
         if not self.local_model_dir or not self.local_model_dir.exists() or not self.local_model_dir.is_dir():
@@ -67,51 +71,65 @@ class BGEEmbeddings:
         return any((self.local_model_dir / marker).exists() for marker in required_markers)
 
     def _get_model(self):
-        if self.model is None:
-            if self._is_hash_mode():
-                logger.info("Usando embeddings locales por hashing (%s)", self.model_name)
-                self.model = "hash"
+        if self.model is not None:
+            return self.model
+
+        if self._is_hash_mode():
+            logger.info("Usando embeddings locales por hashing (%s)", self.model_name)
+            self.model = "hash"
+            return self.model
+
+        from sentence_transformers import SentenceTransformer
+
+        self._prepare_hf_runtime()
+        device = self._device()
+
+        if self._has_local_model_files():
+            logger.info("Cargando modelo de embeddings local desde %s", self.local_model_dir)
+            try:
+                self.model = SentenceTransformer(str(self.local_model_dir), cache_folder=self.cache_folder, device=device)
                 return self.model
+            except Exception as exc:
+                logger.warning("Fallo modelo local (%s). Intentando remoto.", exc)
 
-            from sentence_transformers import SentenceTransformer
+        models_to_try = [self.model_name]
+        if self.model_name != _FALLBACK_MODEL_NAME:
+            models_to_try.append(_FALLBACK_MODEL_NAME)
 
-            self._prepare_hf_runtime()
-            if self._has_local_model_files():
-                logger.info("Cargando modelo de embeddings local desde %s", self.local_model_dir)
-                self.model = SentenceTransformer(str(self.local_model_dir), cache_folder=self.cache_folder)
-            else:
-                if self.local_model_dir:
-                    logger.warning(
-                        "Carpeta local de embeddings no valida o incompleta en %s. Usando modelo remoto %s.",
-                        self.local_model_dir,
-                        self.model_name,
-                    )
-                logger.info("Cargando modelo de embeddings remoto %s", self.model_name)
-                try:
-                    self.model = SentenceTransformer(self.model_name, cache_folder=self.cache_folder)
-                except Exception:
-                    if self.model_name != _FALLBACK_MODEL_NAME:
-                        logger.exception(
-                            "Fallo cargando %s. Reintentando con fallback %s.",
-                            self.model_name,
-                            _FALLBACK_MODEL_NAME,
-                        )
-                        self.model = SentenceTransformer(_FALLBACK_MODEL_NAME, cache_folder=self.cache_folder)
-                    else:
-                        raise
+        for name in models_to_try:
+            if self.local_model_dir and name == self.model_name:
+                logger.warning(
+                    "Carpeta local de embeddings no valida o incompleta en %s. Usando modelo remoto %s.",
+                    self.local_model_dir,
+                    name,
+                )
+            try:
+                logger.info("Cargando modelo de embeddings %s", name)
+                self.model = SentenceTransformer(name, cache_folder=self.cache_folder, device=device)
+                return self.model
+            except Exception as exc:
+                logger.warning("Fallo cargando %s: %s", name, exc)
+
+        logger.warning("No se pudo cargar ningun modelo de embeddings. Usando hash fallback.")
+        self.model = "hash"
         return self.model
+
+    def _use_hash(self) -> bool:
+        return self.model == "hash" or self._is_hash_mode()
 
     def embed_documents(self, texts: list[str]) -> list[list[float]]:
         if not texts:
             return []
-        if self._is_hash_mode():
+        self._get_model()
+        if self._use_hash():
             dimension = self._hash_dimension()
             return [self._hash_embed(text, dimension) for text in texts]
-        vectors = self._get_model().encode(texts, normalize_embeddings=True, show_progress_bar=False)
+        vectors = self.model.encode(texts, normalize_embeddings=True, show_progress_bar=False)
         return vectors.tolist()
 
     def embed_query(self, text: str) -> list[float]:
-        if self._is_hash_mode():
+        self._get_model()
+        if self._use_hash():
             return self._hash_embed(text, self._hash_dimension())
-        vector = self._get_model().encode([text], normalize_embeddings=True, show_progress_bar=False)[0]
+        vector = self.model.encode([text], normalize_embeddings=True, show_progress_bar=False)[0]
         return vector.tolist()

@@ -2,14 +2,12 @@ from __future__ import annotations
 
 import logging
 
+from crewai import Agent
+
 from app.config.settings import Settings
 from app.llm.client import LLMClient
+from app.llm.crewai_adapter import build_crewai_llm
 from app.models import QuestionIntent
-
-try:  # pragma: no cover - dependency optional during bootstrap
-    from crewai import Agent
-except Exception:  # pragma: no cover - fallback when CrewAI is unavailable
-    Agent = None
 
 logger = logging.getLogger(__name__)
 
@@ -20,12 +18,20 @@ class IntentClassifierAgent:
         self.llm_client = llm_client
         self.crewai_agent = self._build_crewai_agent(crew_llm)
 
-    def _build_crewai_agent(self, crew_llm=None):
-        # Los agentes CrewAI se reservan para una etapa posterior con Tasks/Crew.
-        # La clasificacion actual usa directamente LLMClient.
-        return None
+    def _build_crewai_agent(self, crew_llm):
+        llm = crew_llm or build_crewai_llm(self.settings)
+        if llm is None:
+            return None
+        return Agent(
+            role="Clasificador de Intenciones",
+            goal="Clasificar consultas universitarias en categorias (academic, administrative, regulation, procedures, general, other) y determinar si requieren busqueda documental",
+            backstory="Experto en normativa y procesos academicos de la Universidad de Antioquia. Entiende el contexto administrativo, regulatorio y academico para clasificar preguntas con precision.",
+            llm=llm,
+            verbose=False,
+        )
 
-    def _format_chat_history(self, chat_history: list[dict[str, str]] | None) -> str:
+    @staticmethod
+    def _format_chat_history(chat_history: list[dict[str, str]] | None) -> str:
         if not chat_history:
             return "Sin historial previo."
         formatted: list[str] = []
@@ -69,6 +75,6 @@ Reglas:
                 confidence=float(payload.get("confidence", 0.0) or 0.0),
                 rationale=str(payload.get("rationale", "") or ""),
             )
-        except Exception as exc:  # pragma: no cover - defensive fallback
+        except Exception as exc:
             logger.exception("Fallo la clasificacion de intencion")
             return QuestionIntent(category="general", needs_retrieval=True, confidence=0.2, rationale=str(exc))

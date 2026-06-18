@@ -2,14 +2,12 @@ from __future__ import annotations
 
 import logging
 
+from crewai import Agent
+
 from app.config.settings import Settings
 from app.llm.client import LLMClient
+from app.llm.crewai_adapter import build_crewai_llm
 from app.models import AnswerPayload, QuestionIntent, RetrievalHit
-
-try:  # pragma: no cover - optional during bootstrap
-    from crewai import Agent
-except Exception:  # pragma: no cover
-    Agent = None
 
 logger = logging.getLogger(__name__)
 
@@ -20,12 +18,20 @@ class WriterAgent:
         self.llm_client = llm_client
         self.crewai_agent = self._build_crewai_agent(crew_llm)
 
-    def _build_crewai_agent(self, crew_llm=None):
-        # Los agentes CrewAI se reservan para una etapa posterior con Tasks/Crew.
-        # La redaccion actual usa directamente LLMClient.
-        return None
+    def _build_crewai_agent(self, crew_llm):
+        llm = crew_llm or build_crewai_llm(self.settings)
+        if llm is None:
+            return None
+        return Agent(
+            role="Redactor de Respuestas Administrativas",
+            goal="Redactar respuestas claras, precisas y fundamentadas en la evidencia documental recuperada",
+            backstory="Redactor experto en comunicacion academica y administrativa. Traduce la normativa universitaria en respuestas claras y utiles para estudiantes y personal de la Universidad de Antioquia.",
+            llm=llm,
+            verbose=False,
+        )
 
-    def _format_chat_history(self, chat_history: list[dict[str, str]] | None) -> str:
+    @staticmethod
+    def _format_chat_history(chat_history: list[dict[str, str]] | None) -> str:
         if not chat_history:
             return "Sin historial previo."
         formatted: list[str] = []
@@ -98,7 +104,7 @@ Instrucciones:
                 sources=hits,
                 notes=[str(note) for note in notes],
             )
-        except Exception as exc:  # pragma: no cover - defensive fallback
+        except Exception as exc:
             logger.exception("Fallo el agente redactor")
             fallback = self._fallback_answer(question=question, intent=intent, hits=hits)
             fallback.notes.append(f"Contingencia activada por error LLM: {exc}")

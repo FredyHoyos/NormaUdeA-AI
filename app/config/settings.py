@@ -31,6 +31,11 @@ class Settings(BaseSettings):
     bge_m3_model: str = "BAAI/bge-m3"
     bge_m3_local_dir: Path = Field(default=Path("data/models/bge-m3"))
     bge_m3_cache_dir: Path = Field(default=Path("data/models/.cache/huggingface"))
+    reranker_enabled: bool = True
+    reranker_model: str = "BAAI/bge-reranker-v2-m3"
+    reranker_retrieval_k: int = 20
+    reranker_final_k: int = 5
+    reranker_use_llm_fallback: bool = True
     ocr_enabled: bool = True
     ocr_lang: str = "spa+eng"
     ocr_tesseract_cmd: str | None = None
