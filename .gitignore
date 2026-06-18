@@ -18,6 +18,8 @@ data/chroma/
 # Archivos de registro del sistema
 logs/
 *.log
+.tools/
+data/analytics.db
 
 # Instaladores o paquetes de Windows
 *.msixbundle
