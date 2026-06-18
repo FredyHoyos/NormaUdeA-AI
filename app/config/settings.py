@@ -41,6 +41,7 @@ class Settings(BaseSettings):
     ocr_tesseract_cmd: str | None = None
     streamlit_page_title: str = "Copiloto Administrativo Agéntico UdeA"
     streamlit_page_icon: str = "🎓"
+    analytics_db_path: Path = Field(default=Path("data/analytics.db"))
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 

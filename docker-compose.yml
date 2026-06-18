@@ -1,0 +1,61 @@
+version: "3.9"
+
+# ============================================================
+# Copiloto Administrativo Agéntico UdeA — Docker Compose
+# ============================================================
+# Todos los datos (PDFs, ChromaDB, analytics SQLite, logs)
+# se mapean a ./data y ./logs en el host, garantizando
+# persistencia entre reinicios del contenedor.
+#
+# Uso:
+#   docker compose up --build          # primer arranque
+#   docker compose up -d               # en background
+#   docker compose restart             # reiniciar sin perder datos
+#   docker compose down                # detener (datos persisten en ./data)
+# ============================================================
+
+services:
+  copiloto:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: norma_udea_copiloto
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    environment:
+      # Lee variables desde .env del host; si no existe, usa defaults del Settings
+      - LLM_PROVIDER=${LLM_PROVIDER:-auto}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL:-}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o-mini}
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-llama3.1:8b}
+    volumes:
+      # ── PERSISTENCIA DE DATOS ──────────────────────────────────────────────
+      # ./data monta toda la carpeta de datos:
+      #   - ./data/pdfs/         → PDFs fuente
+      #   - ./data/chroma/       → base vectorial ChromaDB
+      #   - ./data/analytics.db  → registro SQLite de interacciones
+      #   - ./data/models/       → modelos de embeddings cacheados
+      - ./data:/app/data
+      # ── LOGS ──────────────────────────────────────────────────────────────
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+# ── NOTAS SOBRE DOCKER ─────────────────────────────────────────────────────
+# Dockerfile mínimo esperado (si no existe créalo):
+#
+#   FROM python:3.11-slim
+#   WORKDIR /app
+#   COPY requirements.txt .
+#   RUN pip install --no-cache-dir -r requirements.txt
+#   COPY . .
+#   EXPOSE 8501
+#   CMD ["streamlit", "run", "app/main.py", "--server.address=0.0.0.0", "--server.port=8501"]

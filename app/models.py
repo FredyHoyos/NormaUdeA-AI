@@ -40,6 +40,7 @@ class AnswerPayload(BaseModel):
     documents_used: list[str] = Field(default_factory=list)
     sources: list[RetrievalHit] = Field(default_factory=list)
     notes: list[str] = Field(default_factory=list)
+    processing_time_ms: float = 0.0
 
 
 class IngestionSummary(BaseModel):

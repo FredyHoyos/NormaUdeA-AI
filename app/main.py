@@ -1,3 +1,12 @@
+"""Punto de entrada principal — Copiloto Administrativo Agéntico UdeA.
+
+Integra:
+- Frontend institucional UdeA (CSS, paleta, tipografía).
+- Preguntas sugeridas en cold-start (inyección automática al flujo).
+- Registro analítico de interacciones (SQLite).
+- Sidebar con configuración y métricas de uso.
+"""
+
 from __future__ import annotations
 
 import logging
@@ -17,10 +26,23 @@ from app.config.settings import get_settings
 from app.core.logging_config import configure_logging
 from app.models import IngestionProgress
 from app.services.answer_service import AnswerService
-from app.ui.components import render_answer, render_ingestion_summary
+from app.ui.components import (
+    inject_udea_styles,
+    render_answer,
+    render_ingestion_summary,
+    render_suggested_questions,
+    render_welcome_banner,
+)
 
 logger = logging.getLogger(__name__)
 _MAX_CHAT_MEMORY_MESSAGES = 10
+
+# ── Preguntas frecuentes para el cold-start ──────────────────────────────────
+SUGGESTED_QUESTIONS: list[str] = [
+    "¿Cómo solicito una cancelación de matrícula?",
+    "¿Cuáles son los requisitos para una homologación de materias?",
+    "¿Qué debo hacer si repruebo una materia por tercera vez?",
+]
 
 
 @st.cache_resource(show_spinner=False)
@@ -31,60 +53,134 @@ def get_service() -> AnswerService:
     return AnswerService(manager)
 
 
+def _process_question(question: str, service: AnswerService) -> None:
+    """Procesa una pregunta (del input o de un botón sugerido) y renderiza la respuesta."""
+    st.session_state.messages.append({"role": "user", "content": question})
+    chat_history = st.session_state.messages[-_MAX_CHAT_MEMORY_MESSAGES:]
+
+    with st.chat_message("user"):
+        st.markdown(question)
+
+    with st.chat_message("assistant"):
+        with st.spinner("🔍 Consultando documentos y redactando respuesta…"):
+            answer = service.answer(question, chat_history=chat_history)
+        render_answer(answer)
+        st.session_state.messages.append({"role": "assistant", "content": answer.answer})
+
+
 def main() -> None:
     settings = get_settings()
-    st.set_page_config(page_title=settings.streamlit_page_title, page_icon=settings.streamlit_page_icon, layout="wide")
-    st.title(settings.app_name)
-    st.caption("Copiloto administrativo agéntico para consultas sobre PDFs locales de la Universidad de Antioquia.")
+    st.set_page_config(
+        page_title=settings.streamlit_page_title,
+        page_icon=settings.streamlit_page_icon,
+        layout="wide",
+        initial_sidebar_state="expanded",
+    )
+
+    # ── Estilos institucionales UdeA ─────────────────────────────────────────
+    inject_udea_styles()
+
+    # ── Header ───────────────────────────────────────────────────────────────
+    st.markdown(
+        "<h1 style='margin-bottom:0'>🎓 Copiloto Administrativo UdeA</h1>",
+        unsafe_allow_html=True,
+    )
+    st.caption(
+        "Asesor estudiantil digital · Normas, reglamentos y procedimientos académicos · "
+        "Universidad de Antioquia"
+    )
 
     service = get_service()
 
+    # ── Sidebar institucional ─────────────────────────────────────────────────
     with st.sidebar:
-        st.header("Configuracion")
-        st.write(f"Proveedor LLM: {settings.llm_provider}")
-        st.write(f"Coleccion Chroma: {settings.chroma_collection}")
-        st.write(f"Carpeta PDFs: {settings.pdf_dir}")
-        st.write(f"Base vectorial: {settings.chroma_dir}")
+        st.markdown(
+            """
+            <div style="text-align:center;padding:1rem 0 0.5rem 0;">
+              <span style="font-size:3rem;">🎓</span><br>
+              <strong style="font-size:1.1rem;">NormaUdeA-AI</strong><br>
+              <span style="font-size:0.78rem;opacity:0.85;">Copiloto Administrativo Agéntico</span>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.divider()
 
-        if st.button("Indexar PDFs locales", type="primary"):
+        st.markdown("**⚙️ Configuración**")
+        st.write(f"🤖 Proveedor LLM: `{settings.llm_provider}`")
+        st.write(f"📦 Colección: `{settings.chroma_collection}`")
+        st.write(f"📁 PDFs: `{settings.pdf_dir}`")
+
+        st.divider()
+
+        if st.button("📥 Indexar PDFs locales", type="primary"):
             progress_bar = st.progress(0)
             progress_status = st.empty()
 
             def on_progress(progress: IngestionProgress) -> None:
                 progress_bar.progress(int(progress.progress_percent))
                 progress_status.info(
-                    f"{progress.message} | Archivos: {progress.files_processed}/{progress.total_files} | "
+                    f"{progress.message} | "
+                    f"Archivos: {progress.files_processed}/{progress.total_files} | "
                     f"Chunks: {progress.chunks_indexed}"
                 )
 
-            with st.spinner("Indexando documentos locales..."):
+            with st.spinner("Indexando documentos locales…"):
                 summary = service.index_documents(progress_callback=on_progress)
             progress_bar.progress(100)
             progress_status.success(
-                f"Indexacion finalizada | Archivos: {summary.files_processed} | Chunks: {summary.chunks_indexed}"
+                f"✅ Finalizado | Archivos: {summary.files_processed} | Chunks: {summary.chunks_indexed}"
             )
-            st.success("Indexacion completada")
             render_ingestion_summary(summary)
 
+        st.divider()
+
+        # ── Estadísticas de uso (SQLite) ─────────────────────────────────────
+        st.markdown("**📊 Estadísticas de uso**")
+        try:
+            stats = service.logger.get_stats()
+            if stats and stats.get("total_queries"):
+                st.metric("Consultas totales", stats.get("total_queries", 0))
+                st.metric("Confianza promedio", f"{float(stats.get('avg_confidence', 0)):.0%}")
+                st.metric("Tiempo promedio", f"{float(stats.get('avg_time_ms', 0)) / 1000:.1f} s")
+            else:
+                st.caption("Aún no hay consultas registradas.")
+        except Exception:
+            st.caption("Estadísticas no disponibles.")
+
+        st.divider()
+        st.caption("Powered by CrewAI · ChromaDB · Streamlit")
+
+    # ── Estado del chat ───────────────────────────────────────────────────────
     if "messages" not in st.session_state:
         st.session_state.messages = []
+    if "pending_question" not in st.session_state:
+        st.session_state.pending_question = None
 
+    # ── Cold Start: banner + preguntas sugeridas ──────────────────────────────
+    if not st.session_state.messages:
+        render_welcome_banner()
+        clicked = render_suggested_questions(SUGGESTED_QUESTIONS)
+        if clicked:
+            st.session_state.pending_question = clicked
+            st.rerun()
+
+    # ── Renderizar historial de mensajes ──────────────────────────────────────
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    question = st.chat_input("Escribe tu pregunta sobre reglamentos, tramites o normas academicas")
-    if question:
-        st.session_state.messages.append({"role": "user", "content": question})
-        chat_history = st.session_state.messages[-_MAX_CHAT_MEMORY_MESSAGES:]
-        with st.chat_message("user"):
-            st.markdown(question)
+    # ── Procesar pregunta pendiente (de botón sugerido) ───────────────────────
+    if st.session_state.pending_question:
+        question = st.session_state.pending_question
+        st.session_state.pending_question = None
+        _process_question(question, service)
+        st.rerun()
 
-        with st.chat_message("assistant"):
-            with st.spinner("Consultando documentos y redactando respuesta..."):
-                answer = service.answer(question, chat_history=chat_history)
-            render_answer(answer)
-            st.session_state.messages.append({"role": "assistant", "content": answer.answer})
+    # ── Input de chat ─────────────────────────────────────────────────────────
+    question = st.chat_input("Escribe tu pregunta sobre reglamentos, trámites o normas académicas…")
+    if question:
+        _process_question(question, service)
 
 
 if __name__ == "__main__":
