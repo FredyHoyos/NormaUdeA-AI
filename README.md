@@ -57,6 +57,9 @@ streamlit run app/main.py
 - `OPENAI_MODEL` o `GEMINI_MODEL`
 - `OLLAMA_BASE_URL`, `OLLAMA_MODEL` y `OLLAMA_MODEL_CANDIDATES` para LLM local
 - `PDF_DIR`, `CHROMA_DIR`, `CHUNK_SIZE`, `RETRIEVAL_K`
+- `STRICT_RAG_ONLY=true|false` (recomendado `true`: responde solo con evidencia de PDFs indexados)
+- `STRICT_RAG_MIN_SCORE=0.35` (score minimo de similitud para aceptar evidencia)
+- `STRICT_RAG_MIN_HITS=1` (minimo de fragmentos relevantes para responder)
 - `BGE_M3_MODEL=BAAI/bge-m3`
 - `BGE_M3_LOCAL_DIR=data/models/bge-m3`
 - `BGE_M3_CACHE_DIR=data/models/.cache/huggingface`

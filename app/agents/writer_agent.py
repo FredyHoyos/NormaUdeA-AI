@@ -56,6 +56,8 @@ CÓMO ESTRUCTURAS TU RESPUESTA
 REGLAS DE ORO
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 - Responde SIEMPRE en español, con lenguaje cercano y empático.
+- Usa EXCLUSIVAMENTE el contexto documental recuperado para responder.
+- Tienes prohibido usar conocimiento externo, memoria general del modelo o informacion de internet.
 - Nunca inventes artículos, fechas ni procedimientos.
 - Si la evidencia recuperada es insuficiente, dilo con honestidad y sugiere dónde buscar.
 - Usa los marcadores [1], [2], etc. para referenciar los fragmentos del contexto.
@@ -153,7 +155,7 @@ Devuelve UN ÚNICO objeto JSON válido con exactamente estas claves:
 - "notes": lista de strings con observaciones importantes o limitaciones de la respuesta.
 
 Reglas:
-- Si la evidencia no alcanza, baja la confianza y dilo en el campo "answer".
+- Si la evidencia no alcanza para responder, NO inventes y responde explicitamente que no hay informacion suficiente.
 - Usa [1], [2] para referenciar los fragmentos cuando sea pertinente.
 - NO incluyas claves adicionales en el JSON.
 - La pregunta de cierre va dentro del campo "answer", al final, en cursiva.
@@ -165,6 +167,7 @@ Reglas:
                 return self._fallback_answer(question=question, intent=intent, hits=hits)
             documents_used = payload.get("documents_used") or [hit.source_name for hit in hits]
             notes = payload.get("notes") or []
+            answer_text = self._append_references(answer_text, hits)
             return AnswerPayload(
                 answer=answer_text,
                 intent=intent,
@@ -178,6 +181,22 @@ Reglas:
             fallback = self._fallback_answer(question=question, intent=intent, hits=hits)
             fallback.notes.append(f"Contingencia activada por error LLM: {exc}")
             return fallback
+
+    @staticmethod
+    def _append_references(answer_text: str, hits: list[RetrievalHit]) -> str:
+        if not hits:
+            return answer_text
+
+        if "referencias" in answer_text.lower():
+            return answer_text
+
+        lines: list[str] = []
+        for idx, hit in enumerate(hits[:3], start=1):
+            page_label = f"p. {hit.page_number}" if hit.page_number else "pág. no identificada"
+            lines.append(f"- [{idx}] {hit.source_name} ({page_label})")
+
+        references_block = "\n\nReferencias de PDFs consultados:\n" + "\n".join(lines)
+        return answer_text.rstrip() + references_block
 
     def _fallback_answer(self, question: str, intent: QuestionIntent, hits: list[RetrievalHit]) -> AnswerPayload:
         if not hits:
