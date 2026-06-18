@@ -363,9 +363,16 @@ def render_answer(answer: AnswerPayload) -> None:
 def render_ingestion_summary(summary: IngestionSummary) -> None:
     """Muestra el resumen de la indexación con métricas estilizadas."""
     st.subheader("📊 Estado de indexación")
-    cols = st.columns(3)
-    cols[0].metric("Archivos procesados", summary.files_processed)
-    cols[1].metric("Chunks indexados", summary.chunks_indexed)
-    cols[2].metric("Errores", len(summary.errors))
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric("Archivos procesados", summary.files_processed)
+    col2.metric("Chunks indexados", summary.chunks_indexed)
+    col3.metric("Reutilizados", summary.reused_files)
+    col4.metric("Errores", len(summary.errors))
+
+    if summary.fallback_files:
+        st.info(
+            f"Se usó fallback con campo 'resuelve' en {summary.fallback_files} documento(s) "
+            "cuando no se pudo extraer texto del PDF."
+        )
     if summary.errors:
         st.warning("⚠️ " + "\n".join(summary.errors))
