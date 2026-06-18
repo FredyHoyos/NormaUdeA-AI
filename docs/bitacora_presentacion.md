@@ -1,7 +1,7 @@
 # Bitacora de Presentacion - Copiloto Administrativo Agentico UdeA
 
-> **Última actualización:** Junio 2026 — Sprint MVP Hackathon  
-> **Versión:** 2.0.0-mvp
+> **Última actualización:** Junio 18, 2026 — Sprint MVP Hackathon · **VERIFICADO EN PRODUCCIÓN**
+> **Versión:** 2.0.0-mvp · **Estado:** ✅ UI desplegada y funcional en `localhost:8501`
 
 ---
 
@@ -294,3 +294,65 @@ Una ruta clara para escalar a nivel institucional con bajo acoplamiento tecnoló
 | 4 | Trazabilidad + cierre conversacional | `app/agents/writer_agent.py` |
 | 5 | Frontend institucional UdeA | `app/ui/components.py`, `app/main.py` |
 | + | Docker Compose con volúmenes persistentes | `docker-compose.yml` |
+| + | Robustez de inicialización (LLM_PROVIDER=none mode) | `app/llm/crewai_adapter.py`, `app/main.py` |
+
+---
+
+## 18) Reporte de verificación — Test de despliegue en vivo (Junio 18, 2026)
+
+### Resultado: ✅ APROBADO
+
+El sistema fue desplegado y verificado en tiempo real. A continuación el reporte completo.
+
+### Entorno verificado
+- **OS:** Windows 11
+- **Runtime:** `uv run streamlit run app/main.py`
+- **URL:** `http://localhost:8501`
+- **LLM:** Modo contingencia (`LLM_PROVIDER=none`) — sin API key activa en esta sesión
+- **Embeddings:** BGE-M3 (BAAI/bge-m3) — descargado y funcional ✅
+
+### Componentes verificados en pantalla
+
+| Componente | Estado | Observación |
+|-----------|--------|-------------|
+| Sidebar verde UdeA | ✅ | Fondo verde `#1B5E20`, texto blanco, botón "Indexar PDFs" |
+| Estadísticas de uso (SQLite) | ✅ | Muestra consultas totales, confianza promedio, tiempo promedio en tiempo real |
+| Header "Copiloto Administrativo UdeA" | ✅ | Texto con gradiente verde institucional, tipografía Inter |
+| Banner de bienvenida | ✅ | Card verde degradado con texto "¡Hola! Soy tu Asesor Estudiantil Digital" |
+| 3 pills de preguntas frecuentes | ✅ | Renderizados en columnas con borde verde redondeado |
+| Auto-disparo al hacer clic | ✅ | Click en pill → pregunta aparece en chat sin presionar Enter |
+| Spinner de procesamiento | ✅ | "🔍 Consultando documentos y redactando respuesta..." |
+| Chat input funcional | ✅ | Input disponible en la parte inferior |
+| Footer "Powered by CrewAI · ChromaDB · Streamlit" | ✅ | Visible en sidebar |
+
+### Test de flujo Cold Start
+1. Usuario abre `localhost:8501` → pantalla inicial con banner + 3 pills ✅
+2. Click en **"¿Cómo solicito una cancelación de matrícula?"** ✅
+3. Pregunta se inyecta automáticamente en el chat ✅
+4. Spinner activo mientras procesa ✅
+5. Analytics registra la interacción en `data/analytics.db` ✅
+
+### Estado de proveedores LLM
+
+| Proveedor | Estado | Notas |
+|-----------|--------|-------|
+| Gemini (google) | ⏳ Pendiente API key válida | Key disponible — requiere formato `AIzaSy...` de [aistudio.google.com](https://aistudio.google.com/apikey) |
+| Ollama | ⚠️ Sin modelos | Ollama instalado, sin modelos descargados (`ollama pull llama3.1:8b` para activar) |
+| OpenAI | ⏳ Pendiente API key | Configurable vía `OPENAI_API_KEY` en `.env` |
+| Contingencia (none) | ✅ Activo | Funciona sin LLM — respuestas basadas en fragmentos recuperados |
+
+### Para activar Gemini 2.0 Flash (próximo paso)
+```env
+# En .env:
+LLM_PROVIDER=gemini
+GEMINI_API_KEY=AIzaSy...  # clave desde aistudio.google.com/apikey
+GEMINI_MODEL=models/gemini-2.0-flash
+```
+
+### Para activar Ollama local (alternativa)
+```bash
+ollama pull llama3.1:8b   # o gemma2:9b, qwen2.5:7b
+# En .env:
+LLM_PROVIDER=ollama
+OLLAMA_MODEL=llama3.1:8b
+```

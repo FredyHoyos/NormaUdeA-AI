@@ -46,11 +46,15 @@ SUGGESTED_QUESTIONS: list[str] = [
 
 
 @st.cache_resource(show_spinner=False)
-def get_service() -> AnswerService:
-    settings = get_settings()
-    configure_logging(settings.logs_dir)
-    manager = CrewAIManager(settings)
-    return AnswerService(manager)
+def get_service() -> AnswerService | None:
+    try:
+        settings = get_settings()
+        configure_logging(settings.logs_dir)
+        manager = CrewAIManager(settings)
+        return AnswerService(manager)
+    except Exception as exc:
+        logger.warning("Error al inicializar el servicio: %s", exc)
+        return None
 
 
 def _process_question(question: str, service: AnswerService) -> None:
@@ -90,7 +94,19 @@ def main() -> None:
         "Universidad de Antioquia"
     )
 
-    service = get_service()
+    try:
+        service = get_service()
+    except Exception as exc:
+        logger.warning("Error crítico al inicializar servicio: %s", exc)
+        service = None
+
+    # Si el servicio no pudo inicializarse, mostrar aviso pero NO crashear
+    if service is None:
+        st.warning(
+            "⚠️ **Modo sin LLM activo** — No se detectó un proveedor de IA configurado.\n\n"
+            "La interfaz carga correctamente. Para habilitar respuestas completas, configura "
+            "en tu `.env`: `GEMINI_API_KEY`, `OPENAI_API_KEY` o levanta Ollama localmente."
+        )
 
     # ── Sidebar institucional ─────────────────────────────────────────────────
     with st.sidebar:
@@ -161,9 +177,11 @@ def main() -> None:
     if not st.session_state.messages:
         render_welcome_banner()
         clicked = render_suggested_questions(SUGGESTED_QUESTIONS)
-        if clicked:
+        if clicked and service is not None:
             st.session_state.pending_question = clicked
             st.rerun()
+        elif clicked and service is None:
+            st.info("Configura un proveedor LLM en `.env` para responder preguntas.")
 
     # ── Renderizar historial de mensajes ──────────────────────────────────────
     for message in st.session_state.messages:
@@ -171,7 +189,7 @@ def main() -> None:
             st.markdown(message["content"])
 
     # ── Procesar pregunta pendiente (de botón sugerido) ───────────────────────
-    if st.session_state.pending_question:
+    if st.session_state.pending_question and service is not None:
         question = st.session_state.pending_question
         st.session_state.pending_question = None
         _process_question(question, service)
@@ -179,8 +197,10 @@ def main() -> None:
 
     # ── Input de chat ─────────────────────────────────────────────────────────
     question = st.chat_input("Escribe tu pregunta sobre reglamentos, trámites o normas académicas…")
-    if question:
+    if question and service is not None:
         _process_question(question, service)
+    elif question and service is None:
+        st.warning("Sin LLM configurado. Configura `GEMINI_API_KEY` u `OPENAI_API_KEY` en `.env`.")
 
 
 if __name__ == "__main__":

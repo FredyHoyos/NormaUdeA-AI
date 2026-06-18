@@ -15,26 +15,35 @@ def build_crewai_llm(settings: Settings):
     if provider == "auto":
         provider = _resolve_for_crewai(settings)
 
-    if provider == "openai":
-        kwargs = {"model": settings.openai_model}
-        if settings.openai_api_key:
-            kwargs["api_key"] = settings.openai_api_key
-        if settings.openai_base_url:
-            kwargs["base_url"] = settings.openai_base_url
-        return CrewLLM(**kwargs)
+    if provider in ("none", ""):
+        logger.info("CrewAI LLM desactivado (provider='none'). Modo contingencia activo.")
+        return None
 
-    if provider == "gemini":
-        kwargs = {"model": settings.gemini_model, "provider": "google"}
-        if settings.gemini_api_key:
-            kwargs["api_key"] = settings.gemini_api_key
-        return CrewLLM(**kwargs)
+    try:
+        if provider == "openai":
+            kwargs = {"model": settings.openai_model}
+            if settings.openai_api_key:
+                kwargs["api_key"] = settings.openai_api_key
+            if settings.openai_base_url:
+                kwargs["base_url"] = settings.openai_base_url
+            return CrewLLM(**kwargs)
 
-    if provider in ("ollama", "local"):
-        model_name = f"ollama/{settings.ollama_model}"
-        kwargs = {"model": model_name, "base_url": settings.ollama_base_url}
-        return CrewLLM(**kwargs)
+        if provider == "gemini":
+            kwargs = {"model": settings.gemini_model, "provider": "google"}
+            if settings.gemini_api_key:
+                kwargs["api_key"] = settings.gemini_api_key
+            return CrewLLM(**kwargs)
 
-    logger.warning("No se pudo crear CrewAI LLM para provider=%s. Usando fallback None.", provider)
+        if provider in ("ollama", "local"):
+            model_name = f"ollama/{settings.ollama_model}"
+            kwargs = {"model": model_name, "base_url": settings.ollama_base_url}
+            return CrewLLM(**kwargs)
+
+    except Exception as exc:
+        logger.warning("Error al crear CrewAI LLM para provider=%s: %s. Usando fallback None.", provider, exc)
+        return None
+
+    logger.warning("Provider '%s' desconocido. Usando fallback None.", provider)
     return None
 
 
@@ -44,8 +53,8 @@ def _resolve_for_crewai(settings: Settings) -> str:
     if settings.gemini_api_key:
         return "gemini"
     try:
-        import urllib.request
         import json
+        import urllib.request
 
         req = urllib.request.Request(
             f"{settings.ollama_base_url}/api/tags",
@@ -57,4 +66,6 @@ def _resolve_for_crewai(settings: Settings) -> str:
                 return "ollama"
     except Exception:
         pass
-    return "openai"
+    # Sin credenciales ni Ollama disponible → modo contingencia sin LLM
+    logger.warning("No se detectó proveedor LLM disponible en modo auto. Usando modo 'none'.")
+    return "none"
