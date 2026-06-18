@@ -1,3 +1,12 @@
 [server]
 # Evita errores ruidosos de watcher con imports lazy de transformers (torchvision opcional)
 fileWatcherType = "none"
+
+[theme]
+# Tema fijo institucional UdeA — inmune al modo claro/oscuro del sistema operativo
+base                = "light"
+primaryColor        = "#1B5E20"
+backgroundColor     = "#FFFFFF"
+secondaryBackgroundColor = "#F0F7F0"
+textColor           = "#1A1A1A"
+font                = "sans serif"

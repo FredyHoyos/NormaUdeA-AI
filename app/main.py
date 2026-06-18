@@ -29,7 +29,9 @@ from app.services.answer_service import AnswerService
 from app.ui.components import (
     inject_udea_styles,
     render_answer,
+    render_header_with_logo,
     render_ingestion_summary,
+    render_sidebar_logo,
     render_suggested_questions,
     render_welcome_banner,
 )
@@ -82,15 +84,7 @@ def main() -> None:
     )
 
     inject_udea_styles()
-
-    st.markdown(
-        "<h1 style='margin-bottom:0'>Copiloto Administrativo UdeA</h1>",
-        unsafe_allow_html=True,
-    )
-    st.caption(
-        "Asesor estudiantil digital - Normas, reglamentos y procedimientos academicos - "
-        "Universidad de Antioquia"
-    )
+    render_header_with_logo()
 
     try:
         service = get_service()
@@ -107,16 +101,7 @@ def main() -> None:
         )
 
     with st.sidebar:
-        st.markdown(
-            """
-            <div style="text-align:center;padding:1rem 0 0.5rem 0;">
-              <span style="font-size:3rem;">🎓</span><br>
-              <strong style="font-size:1.1rem;">NormaUdeA-AI</strong><br>
-              <span style="font-size:0.78rem;opacity:0.85;">Copiloto Administrativo Agentico</span>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+        render_sidebar_logo()
         st.divider()
 
         st.markdown("**Configuracion**")
