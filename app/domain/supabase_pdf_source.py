@@ -73,6 +73,7 @@ class SupabasePDFSource(DocumentSource):
             [
                 str(row.get("id") or ""),
                 str(row.get("fecha_expedicion") or ""),
+                str(row.get("fecha_rastreo") or ""),
                 str(row.get("numero") or ""),
                 str(row.get("asunto") or ""),
                 str(row.get("tipo_documento") or ""),

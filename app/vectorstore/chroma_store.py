@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import re
 
 import chromadb
 
@@ -123,7 +124,7 @@ class ChromaKnowledgeBase:
                 return []
             raise
 
-        hits: list[RetrievalHit] = []
+        semantic_hits: list[RetrievalHit] = []
         documents = result.get("documents", [[]])[0]
         metadatas = result.get("metadatas", [[]])[0]
         distances = result.get("distances", [[]])[0]
@@ -131,7 +132,7 @@ class ChromaKnowledgeBase:
 
         for chunk_id, text, metadata, distance in zip(ids, documents, metadatas, distances):
             similarity = max(0.0, 1.0 - float(distance or 0.0))
-            hits.append(
+            semantic_hits.append(
                 RetrievalHit(
                     chunk_id=chunk_id,
                     text=text,
@@ -143,4 +144,75 @@ class ChromaKnowledgeBase:
                     metadata=dict(metadata),
                 )
             )
+
+        lexical_hits = self._query_article_lexical_hits(collection, query, limit=limit)
+        return self._merge_hits(semantic_hits, lexical_hits, limit=limit)
+
+    @staticmethod
+    def _extract_article_number(query: str) -> int | None:
+        match = re.search(r"\\bart[íi]?culo\\s+(\\d{1,4})\\b", query.lower())
+        if not match:
+            return None
+        return int(match.group(1))
+
+    def _query_article_lexical_hits(self, collection, query: str, limit: int) -> list[RetrievalHit]:
+        article_number = self._extract_article_number(query)
+        if article_number is None:
+            return []
+
+        # Add a direct textual match path for "Articulo N" questions.
+        regex = rf"(?i)art[íi]?culo\\s+{article_number}\\b"
+        try:
+            result = collection.get(
+                where_document={"$regex": regex},
+                include=["documents", "metadatas"],
+                limit=max(limit, 10),
+            )
+        except Exception as exc:
+            logger.warning("Fallo busqueda lexical por articulo %s: %s", article_number, exc)
+            return []
+
+        ids = result.get("ids", []) or []
+        documents = result.get("documents", []) or []
+        metadatas = result.get("metadatas", []) or []
+
+        hits: list[RetrievalHit] = []
+        for rank, (chunk_id, text, metadata) in enumerate(zip(ids, documents, metadatas), start=1):
+            # Strong lexical matches should rank near the top.
+            lexical_score = max(0.80, 0.99 - (rank - 1) * 0.01)
+            metadata_dict = dict(metadata or {})
+            hits.append(
+                RetrievalHit(
+                    chunk_id=str(chunk_id),
+                    text=str(text),
+                    score=lexical_score,
+                    source_name=str(metadata_dict.get("source_name", "desconocido")),
+                    source_path=str(metadata_dict.get("source_path", "")),
+                    page_number=int(metadata_dict.get("page_number") or 0) or None,
+                    chunk_index=int(metadata_dict.get("chunk_index") or 0),
+                    metadata=metadata_dict,
+                )
+            )
         return hits
+
+    @staticmethod
+    def _merge_hits(semantic_hits: list[RetrievalHit], lexical_hits: list[RetrievalHit], limit: int) -> list[RetrievalHit]:
+        merged: dict[str, RetrievalHit] = {}
+
+        for hit in semantic_hits:
+            merged[hit.chunk_id] = hit
+
+        for hit in lexical_hits:
+            existing = merged.get(hit.chunk_id)
+            if existing is None:
+                merged[hit.chunk_id] = hit
+                continue
+            if hit.score > existing.score:
+                merged[hit.chunk_id] = hit
+
+        ordered = sorted(
+            merged.values(),
+            key=lambda item: (item.score, -(item.page_number or 10_000), -item.chunk_index),
+            reverse=True,
+        )
+        return ordered[:limit]
