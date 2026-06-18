@@ -17,6 +17,9 @@ class Settings(BaseSettings):
     retrieval_k: int = 5
     max_context_chars: int = 12000
     confidence_threshold: float = 0.35
+    strict_rag_only: bool = True
+    strict_rag_min_score: float = 0.35
+    strict_rag_min_hits: int = 1
     llm_provider: str = "auto"
     openai_api_key: str | None = None
     openai_base_url: str | None = None

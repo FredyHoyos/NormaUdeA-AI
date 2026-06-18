@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from collections.abc import Callable
 from pathlib import Path
 
@@ -47,8 +48,14 @@ class CrewAIManager:
     def answer(self, question: str, chat_history: list[dict[str, str]] | None = None) -> AnswerPayload:
         intent = self.classifier_agent.classify(question, chat_history=chat_history)
 
+        if self._should_force_retrieval(question):
+            intent.needs_retrieval = True
+
         if not intent.needs_retrieval:
             return self._answer_conversational(question, intent, chat_history)
+
+        if self.settings.strict_rag_only:
+            return self._answer_direct(question, intent, chat_history)
 
         if self.crew_llm is not None and self._agents_ready():
             try:
@@ -241,10 +248,66 @@ Responde de forma natural, amigable y conversacional en español.
 
     def _answer_direct(self, question: str, intent: QuestionIntent, chat_history: list[dict[str, str]] | None = None) -> AnswerPayload:
         hits = self.retriever_agent.recover(question) if intent.needs_retrieval else []
+        hits = self._select_grounded_hits(hits)
+        if intent.needs_retrieval and not hits:
+            return self._insufficient_evidence_payload(intent)
+
         context = self.retriever.build_context(hits)
         answer = self.writer_agent.draft_answer(question, intent, context, hits, chat_history=chat_history)
+        answer.sources = hits
+        answer.documents_used = list(dict.fromkeys(hit.source_name for hit in hits))
         answer.confidence = self._final_confidence(answer, hits, intent)
         return answer
+
+    def _insufficient_evidence_payload(self, intent: QuestionIntent) -> AnswerPayload:
+        return AnswerPayload(
+            answer=(
+                "No hay informacion documental suficiente en los PDFs indexados para responder esa pregunta con precision. "
+                "Si quieres, puedo intentarlo de nuevo con una pregunta mas especifica o con mas documentos indexados."
+            ),
+            intent=intent,
+            confidence=0.15,
+            documents_used=[],
+            sources=[],
+            notes=["Respuesta bloqueada por modo RAG estricto: sin evidencia documental suficiente."],
+        )
+
+    def _select_grounded_hits(self, hits: list[RetrievalHit]) -> list[RetrievalHit]:
+        if not hits:
+            return []
+
+        min_score = max(0.0, min(1.0, float(self.settings.strict_rag_min_score)))
+        filtered = [hit for hit in hits if hit.score >= min_score]
+
+        if len(filtered) < max(1, int(self.settings.strict_rag_min_hits)):
+            return []
+
+        return filtered[: self.settings.retrieval_k]
+
+    def _should_force_retrieval(self, question: str) -> bool:
+        if not self.settings.strict_rag_only:
+            return False
+        return not self._is_small_talk(question)
+
+    @staticmethod
+    def _is_small_talk(question: str) -> bool:
+        text = question.strip().lower()
+        if not text:
+            return True
+
+        patterns = [
+            r"^hola[!. ]*$",
+            r"^buen(as|os)?\s+(dias|tardes|noches)[!. ]*$",
+            r"^gracias[!. ]*$",
+            r"^muchas\s+gracias[!. ]*$",
+            r"^ok(ay)?[!. ]*$",
+            r"^listo[!. ]*$",
+            r"^entiendo[!. ]*$",
+            r"^adios[!. ]*$",
+            r"^chao[!. ]*$",
+            r"^hasta\s+luego[!. ]*$",
+        ]
+        return any(re.fullmatch(pattern, text) for pattern in patterns)
 
     def _final_confidence(self, answer: AnswerPayload, hits: list, intent) -> float:
         if not hits:
