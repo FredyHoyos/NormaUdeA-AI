@@ -40,11 +40,11 @@ class CrewAIManager:
     ) -> IngestionSummary:
         return self.document_source.index_directory(pdf_dir, progress_callback=progress_callback)
 
-    def answer(self, question: str) -> AnswerPayload:
-        intent = self.classifier_agent.classify(question)
+    def answer(self, question: str, chat_history: list[dict[str, str]] | None = None) -> AnswerPayload:
+        intent = self.classifier_agent.classify(question, chat_history=chat_history)
         hits = self.retriever_agent.recover(question) if intent.needs_retrieval else []
         context = self.retriever.build_context(hits)
-        answer = self.writer_agent.draft_answer(question, intent, context, hits)
+        answer = self.writer_agent.draft_answer(question, intent, context, hits, chat_history=chat_history)
         answer.confidence = self._final_confidence(answer, hits, intent)
         return answer
 

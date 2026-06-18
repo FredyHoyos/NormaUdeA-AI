@@ -13,5 +13,5 @@ class AnswerService:
     def index_documents(self, progress_callback: Callable[[IngestionProgress], None] | None = None) -> IngestionSummary:
         return self.manager.index_local_pdfs(progress_callback=progress_callback)
 
-    def answer(self, question: str) -> AnswerPayload:
-        return self.manager.answer(question)
+    def answer(self, question: str, chat_history: list[dict[str, str]] | None = None) -> AnswerPayload:
+        return self.manager.answer(question, chat_history=chat_history)

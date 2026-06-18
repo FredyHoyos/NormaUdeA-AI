@@ -25,16 +25,30 @@ class WriterAgent:
         # La redaccion actual usa directamente LLMClient.
         return None
 
+    def _format_chat_history(self, chat_history: list[dict[str, str]] | None) -> str:
+        if not chat_history:
+            return "Sin historial previo."
+        formatted: list[str] = []
+        for message in chat_history[-8:]:
+            role = str(message.get("role", "user")).lower().strip()
+            content = str(message.get("content", "")).strip()
+            if not content:
+                continue
+            role_label = "Usuario" if role == "user" else "Asistente"
+            formatted.append(f"{role_label}: {content}")
+        return "\n".join(formatted) if formatted else "Sin historial previo."
+
     def draft_answer(
         self,
         question: str,
         intent: QuestionIntent,
         context: str,
         hits: list[RetrievalHit],
+        chat_history: list[dict[str, str]] | None = None,
     ) -> AnswerPayload:
         system_prompt = (
             "Eres un redactor experto en respuestas administrativas universitarias. "
-            "Responde en espanol, usa solo la evidencia entregada, no inventes informacion y devuelve solo JSON valido."
+            "Responde en espanol, no inventes informacion y devuelve solo JSON valido."
         )
         sources_summary = "\n".join(
             f"[{index}] {hit.source_name} | p. {hit.page_number or 'N/A'} | score={hit.score:.3f}"
@@ -46,6 +60,9 @@ Pregunta:
 
 Intencion:
 {intent.model_dump_json(indent=2)}
+
+Historial reciente:
+{self._format_chat_history(chat_history)}
 
 Contexto recuperado:
 {context}
@@ -62,6 +79,8 @@ Devuelve un JSON con estas llaves:
 Instrucciones:
 - Si la evidencia no alcanza, dilo explicitamente.
 - Usa referencias internas como [1], [2] cuando sea pertinente.
+- Puedes usar hechos explicitos del historial conversacional para continuidad (ejemplo: nombre del usuario).
+- Para preguntas normativas o de procedimientos, prioriza siempre la evidencia documental recuperada.
 - No agregues llaves adicionales.
 """
         try:

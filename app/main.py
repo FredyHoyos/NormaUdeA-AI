@@ -20,8 +20,10 @@ from app.services.answer_service import AnswerService
 from app.ui.components import render_answer, render_ingestion_summary
 
 logger = logging.getLogger(__name__)
+_MAX_CHAT_MEMORY_MESSAGES = 10
 
 
+@st.cache_resource(show_spinner=False)
 def get_service() -> AnswerService:
     settings = get_settings()
     configure_logging(settings.logs_dir)
@@ -74,12 +76,13 @@ def main() -> None:
     question = st.chat_input("Escribe tu pregunta sobre reglamentos, tramites o normas academicas")
     if question:
         st.session_state.messages.append({"role": "user", "content": question})
+        chat_history = st.session_state.messages[-_MAX_CHAT_MEMORY_MESSAGES:]
         with st.chat_message("user"):
             st.markdown(question)
 
         with st.chat_message("assistant"):
             with st.spinner("Consultando documentos y redactando respuesta..."):
-                answer = service.answer(question)
+                answer = service.answer(question, chat_history=chat_history)
             render_answer(answer)
             st.session_state.messages.append({"role": "assistant", "content": answer.answer})
 

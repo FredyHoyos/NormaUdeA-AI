@@ -25,13 +25,29 @@ class IntentClassifierAgent:
         # La clasificacion actual usa directamente LLMClient.
         return None
 
-    def classify(self, question: str) -> QuestionIntent:
+    def _format_chat_history(self, chat_history: list[dict[str, str]] | None) -> str:
+        if not chat_history:
+            return "Sin historial previo."
+        formatted: list[str] = []
+        for message in chat_history[-8:]:
+            role = str(message.get("role", "user")).lower().strip()
+            content = str(message.get("content", "")).strip()
+            if not content:
+                continue
+            role_label = "Usuario" if role == "user" else "Asistente"
+            formatted.append(f"{role_label}: {content}")
+        return "\n".join(formatted) if formatted else "Sin historial previo."
+
+    def classify(self, question: str, chat_history: list[dict[str, str]] | None = None) -> QuestionIntent:
         system_prompt = (
             "Eres el clasificador de un copiloto administrativo universitario. "
             "Devuelve solo JSON valido con las llaves category, needs_retrieval, confidence y rationale."
         )
         prompt = f"""
 Clasifica la siguiente consulta.
+
+    Historial reciente:
+    {self._format_chat_history(chat_history)}
 
 Consulta:
 {question}
@@ -40,6 +56,8 @@ Categorias sugeridas: academic, administrative, regulation, procedures, general,
 
 Reglas:
 - needs_retrieval debe ser true si la respuesta depende de documentos.
+- Para saludos, cortesia o seguimiento conversacional (por ejemplo: "gracias", "igualmente", "como me llamo"),
+  puedes marcar needs_retrieval=false.
 - confidence debe ser un numero entre 0 y 1.
 - rationale debe ser breve y concreta.
 """

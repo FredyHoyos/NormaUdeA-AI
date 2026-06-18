@@ -2778,3 +2778,31 @@ FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\fredi\\OneDr
 2026-06-17 17:03:15,535 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
 2026-06-17 17:03:35,309 | WARNING | app.llm.client | LLM auto: no se detecto proveedor disponible, activando modo none
 2026-06-17 17:03:35,518 | INFO | app.retrieval.retriever | Recuperados 5 fragmentos para la consulta
+2026-06-17 21:00:28,404 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 21:00:28,404 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 21:00:49,326 | INFO | app.llm.client | LLM auto: usando proveedor ollama con modelo qwen2.5:7b
+2026-06-17 21:00:49,326 | INFO | app.llm.client | LLM auto: usando proveedor ollama con modelo qwen2.5:7b
+2026-06-17 21:00:58,476 | ERROR | asyncio | Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\fredi\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\fredi\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2026-06-17 21:00:58,476 | ERROR | asyncio | Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\fredi\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\fredi\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto
+2026-06-17 21:03:13,522 | INFO | app.llm.client | LLM auto: usando proveedor ollama con modelo qwen2.5:7b
+2026-06-17 21:03:13,522 | INFO | app.llm.client | LLM auto: usando proveedor ollama con modelo qwen2.5:7b
+2026-06-17 21:04:41,176 | INFO | app.llm.client | LLM auto: usando proveedor ollama con modelo qwen2.5:7b
+2026-06-17 21:04:41,176 | INFO | app.llm.client | LLM auto: usando proveedor ollama con modelo qwen2.5:7b
+2026-06-17 21:06:50,218 | INFO | app.llm.client | LLM auto: usando proveedor ollama con modelo qwen2.5:7b
+2026-06-17 21:06:50,218 | INFO | app.llm.client | LLM auto: usando proveedor ollama con modelo qwen2.5:7b
+2026-06-17 21:11:56,042 | INFO | chromadb.telemetry.product.posthog | Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-06-17 21:12:09,510 | INFO | app.llm.client | LLM auto: usando proveedor ollama con modelo qwen2.5:7b
