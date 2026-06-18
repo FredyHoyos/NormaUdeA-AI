@@ -2,312 +2,312 @@
   "version": 1,
   "documents": {
     "1": {
-      "signature": "1cd363ef228e0585967c4ed89b768fd1731bc944",
-      "chunks_indexed": 16,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:26:28.899159+00:00"
+      "signature": "178aa58471e9a5ad2d6a8820c6e2f87e4000b989",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:29.258580+00:00"
     },
     "2": {
-      "signature": "922a141de6abfcc185a798fec704ea5f5358a861",
-      "chunks_indexed": 3,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:26:49.535664+00:00"
+      "signature": "38f3083e090eb222b1ee0825d5959dcc3eb1faaa",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:31.202547+00:00"
     },
     "3": {
-      "signature": "6acc983f34ccba45ce41aec80cbb41888928d188",
-      "chunks_indexed": 4,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:27:15.298750+00:00"
+      "signature": "70aae8af3cba6689e2828168006d99fb670169e3",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:33.305739+00:00"
     },
     "4": {
-      "signature": "7aee47fbc8c48d07aa8ce1c0eeeebc997526aca1",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:27:25.145148+00:00"
+      "signature": "0761d4d851c4423c0a02c4363f0dcc349d806d33",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:35.131241+00:00"
     },
     "5": {
-      "signature": "42dfdf06d208c73646a8555b783bafdcf2fe76b8",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:27:33.316110+00:00"
+      "signature": "bc0a11cb681e51a9578df67022ad42a44afacd13",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:36.704766+00:00"
     },
     "6": {
-      "signature": "0ae2501f7d1f884dd43e2199c47b2c40755b6036",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:27:42.585957+00:00"
+      "signature": "0d3363fca3f9a40522732c63178a3754845a83f6",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:38.510547+00:00"
     },
     "7": {
-      "signature": "e8ef0c41209cfa5166f0e2cb0a72061c1e73cfad",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:27:52.093055+00:00"
+      "signature": "9134daaacbab5f5bbbf4d1a22ae5bb8500899963",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:40.265306+00:00"
     },
     "8": {
-      "signature": "a7699e92cee40d370a4094141e3f2a01a88b2487",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:28:01.372395+00:00"
+      "signature": "14332e713e5a11cb6fe808c23d6792f0e9679ee0",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:42.594145+00:00"
     },
     "9": {
-      "signature": "5b881167279ca941ff1f16456985fc68fe6ab5c8",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:28:12.457978+00:00"
+      "signature": "18fcc98bc56e7123fc19b6605085dae5b3fafeb4",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:44.242887+00:00"
     },
     "10": {
-      "signature": "0bbba8aec34a0cd13062ff402d70f9e789d4568a",
-      "chunks_indexed": 3,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:28:32.396178+00:00"
+      "signature": "0f3a3bb90d5f4c12e127ca90589d934d9895bebe",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:45.933490+00:00"
     },
     "11": {
-      "signature": "cdffc43aeb726c5d8402f270538aa0730466a42b",
+      "signature": "576c5861a0ec92583b4f5f33858328c565785629",
       "chunks_indexed": 1,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:28:37.308006+00:00"
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:47.633608+00:00"
     },
     "12": {
-      "signature": "81b365f52b5974cc432613f141da53afeb8bbab0",
+      "signature": "74f87ec0d41bdd5234aed429a1c95e687ef310a7",
       "chunks_indexed": 1,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:28:42.514114+00:00"
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:49.362219+00:00"
     },
     "13": {
-      "signature": "414546ac3f666f614c1700500bbd52f1b82a797b",
+      "signature": "d3891255fd900f0d800272e08d27a25f28cb867a",
       "chunks_indexed": 1,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:28:47.825338+00:00"
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:51.298101+00:00"
     },
     "14": {
-      "signature": "b44158cf3edc8afac67d22a9c7272c3a3ad15c29",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:28:56.863333+00:00"
+      "signature": "886d9a5fcd23bd809ec80bf1824da3dcc701d35d",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:53.698485+00:00"
     },
     "15": {
-      "signature": "c9af0404191a0b81588aed55c27d19d4fe11b709",
+      "signature": "f4e386e1ded4ac823757f3fc96b2394555b71171",
       "chunks_indexed": 1,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:29:00.596975+00:00"
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:55.020515+00:00"
     },
     "16": {
-      "signature": "9f79669674017026b7bf5124876f049c742fa133",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:29:08.989331+00:00"
+      "signature": "fcfe25be44e65a38436e356c47ad901f520fada2",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:57.353385+00:00"
     },
     "17": {
-      "signature": "3a5e168a36760ffb4e0b3b6e05a4a37e65d17861",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:29:18.535055+00:00"
+      "signature": "7a27c5f405281624583ecf2af95046dfa3ee8b12",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:12:58.958328+00:00"
     },
     "18": {
-      "signature": "d2a9b41bf665e8487338766606856ea286b32b1a",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:29:29.574206+00:00"
+      "signature": "566c06c0929b1076c2c41d5d375a67bc17dabf52",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:13:00.696721+00:00"
     },
     "19": {
-      "signature": "363318c5416d76d50df42d840e9fcc1589fa3292",
+      "signature": "f43176f86ea9ea46ac889f1d7db386a84969ca9f",
       "chunks_indexed": 1,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:29:33.899148+00:00"
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:13:02.553236+00:00"
     },
     "20": {
-      "signature": "adb0590fe3aaf2afa131eebe5f96c7f1f1201efc",
-      "chunks_indexed": 5,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:29:58.024119+00:00"
+      "signature": "b7529d3e5518346f9af4bcd2eadd2a549f409578",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:13:04.382641+00:00"
     },
     "21": {
-      "signature": "75b5e0c17a7581353180c1fc2adb67afc3b4f19c",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:30:05.650960+00:00"
+      "signature": "c0177d4223e5cca5eec0c66c3f335507d8306757",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:13:06.001198+00:00"
     },
     "22": {
-      "signature": "2acfed45afb854cb9e81d46dfc2af9cdac469d16",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:30:15.894404+00:00"
+      "signature": "e3d4e5d62c0043417e8c1f2c5df93dcb3a777c4a",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:13:08.617906+00:00"
     },
     "23": {
-      "signature": "5da1b0d25e8d06b67266024397adaa590f25855f",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:30:27.339547+00:00"
+      "signature": "d0cbe32b3104676703bc13ff8f890d99915d48fc",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:13:10.543223+00:00"
     },
     "24": {
-      "signature": "cdfcb0c9475d2f38f0c0749a71a66e9f006818a8",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:30:37.822582+00:00"
+      "signature": "48d7602591e1c89aa959562cde091d231c234d06",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:13:12.693903+00:00"
     },
     "25": {
-      "signature": "83660db97d072297c0536fccd6980a169d7721a0",
+      "signature": "eacef8255628e97693446fcd67bb0e8c01b022ec",
       "chunks_indexed": 56,
-      "ocr_available": true,
+      "ocr_available": false,
       "used_fallback": false,
-      "updated_at": "2026-06-18T09:32:47.229473+00:00"
+      "updated_at": "2026-06-18T15:15:25.889118+00:00"
     },
     "26": {
-      "signature": "8b6a6c0f90fdd6010512c860deb02c4ce4a7f4e6",
-      "chunks_indexed": 62,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:38:35.943132+00:00"
+      "signature": "30ee9ad29b1846c65dc0fb3fff978d7f410bf62f",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:15:30.891130+00:00"
     },
     "27": {
-      "signature": "cc59e4785ca2c40e28259deb4fdb9137ae084ab5",
+      "signature": "506083b548b4f05d9d673d338ea51af2044cc2df",
       "chunks_indexed": 70,
-      "ocr_available": true,
+      "ocr_available": false,
       "used_fallback": false,
-      "updated_at": "2026-06-18T09:43:11.039738+00:00"
+      "updated_at": "2026-06-18T15:20:00.382516+00:00"
     },
     "28": {
-      "signature": "6bcf6231d3f67996037e01f43ea3e7bff198da4f",
+      "signature": "78766e86f72a46bc91d30a3017f0b1aefac28ff1",
       "chunks_indexed": 1,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:43:15.022298+00:00"
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:20:02.358402+00:00"
     },
     "29": {
-      "signature": "14785ef811ff0f80c1a190ac7a03553df1917a0e",
+      "signature": "1d75b9c8fdc4ef46e8354a975a675e57df6dd4a8",
       "chunks_indexed": 24,
-      "ocr_available": true,
+      "ocr_available": false,
       "used_fallback": false,
-      "updated_at": "2026-06-18T09:44:17.619269+00:00"
+      "updated_at": "2026-06-18T15:21:07.528377+00:00"
     },
     "30": {
-      "signature": "ea96154278075c330b340f878946b0c86078ac07",
+      "signature": "c5b5ecbcd4540eaff212410b4a1d0edd1f35c878",
       "chunks_indexed": 26,
-      "ocr_available": true,
+      "ocr_available": false,
       "used_fallback": false,
-      "updated_at": "2026-06-18T09:45:25.464384+00:00"
+      "updated_at": "2026-06-18T15:22:14.032276+00:00"
     },
     "31": {
-      "signature": "5a4167e8881bdf42b00beea84fa5a85ae5c7f24d",
-      "chunks_indexed": 5,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:45:55.142944+00:00"
+      "signature": "49d88603bd59a355f43c000644a7db2b0c865e69",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:22:16.566342+00:00"
     },
     "32": {
-      "signature": "860e5cb24413cefd37d64fc222114884614e54a2",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:46:08.987529+00:00"
+      "signature": "7eaf09b4322c7df8b62f4f9544fe6d65a344ea7e",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:22:18.591165+00:00"
     },
     "33": {
-      "signature": "34be2e840c1d9d82e2ca7b285ba87844e8550c28",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:46:17.513778+00:00"
+      "signature": "2a26ceb0ba7d209302b4e0d4e65d7b33b853d984",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:22:20.729436+00:00"
     },
     "34": {
-      "signature": "603e107aec783fb35baa99fe264cd733fb7f3a60",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:46:28.861013+00:00"
+      "signature": "b94453a0f80936d063dd6f40e2284b4caeb7eecc",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:22:23.269693+00:00"
     },
     "35": {
-      "signature": "9648b10669b7c473ab02def980463f4cac78b321",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:46:36.939840+00:00"
+      "signature": "75f616cc814631521b10c7565e58183ead8bc4e9",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:22:25.038263+00:00"
     },
     "36": {
-      "signature": "86aaf2515af0d1638422a1e65f06f85583e6f5ae",
+      "signature": "f2522920c9c439673bc5b9d65c2ca9c09955b1bd",
       "chunks_indexed": 1,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:46:43.729165+00:00"
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:22:27.263755+00:00"
     },
     "37": {
-      "signature": "e6ed8997ea92e28789e44d4726c824b6cfa2684e",
-      "chunks_indexed": 4,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:47:02.676763+00:00"
+      "signature": "40b166063a1dea1c7a2dc4f137a33d6257e9b5bc",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:22:29.546569+00:00"
     },
     "38": {
-      "signature": "9522923c96f999e611e88359da5ccea7ddbc1e03",
+      "signature": "173de6386d2f8d38bf73cb69f028ca6f774cdde9",
       "chunks_indexed": 41,
-      "ocr_available": true,
+      "ocr_available": false,
       "used_fallback": false,
-      "updated_at": "2026-06-18T09:49:52.092356+00:00"
+      "updated_at": "2026-06-18T15:25:37.879296+00:00"
     },
     "39": {
-      "signature": "755e00f7f0ed57c738ea1e84b91b6929c7515718",
+      "signature": "0e2ab71c6aa0387868c2e947c11d4a4caaa474dc",
       "chunks_indexed": 29,
-      "ocr_available": true,
+      "ocr_available": false,
       "used_fallback": false,
-      "updated_at": "2026-06-18T09:51:12.913811+00:00"
+      "updated_at": "2026-06-18T15:26:55.331944+00:00"
     },
     "40": {
-      "signature": "825d577462b88fdf8f7ca85b5e48d3c791ff00e2",
+      "signature": "05f6f51e3bc95b1feadd8fce3b17f819f048aa21",
       "chunks_indexed": 30,
-      "ocr_available": true,
+      "ocr_available": false,
       "used_fallback": false,
-      "updated_at": "2026-06-18T09:52:29.771187+00:00"
+      "updated_at": "2026-06-18T15:28:14.859545+00:00"
     },
     "41": {
-      "signature": "5cf6a3cf6c81028381962a8b1767f7d2029df825",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:52:43.418242+00:00"
+      "signature": "a542112051cc5446b780e83bcd262582bb89c883",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:28:16.880817+00:00"
     },
     "42": {
-      "signature": "7ed207f6bd7f38e807410b0dac44a50d2f49d070",
+      "signature": "069dd689019a5979b45560bdb153f0fdd21beec1",
       "chunks_indexed": 1,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:52:47.798290+00:00"
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:28:18.706231+00:00"
     },
     "43": {
-      "signature": "2353514dcb64a4bc6492812a47808a052e35de89",
-      "chunks_indexed": 2,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:52:56.165998+00:00"
+      "signature": "c00384021e46fe11b33497224f7816fdd7f77228",
+      "chunks_indexed": 1,
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:28:20.544637+00:00"
     },
     "44": {
-      "signature": "deba8617d2b44d0a6fa4d0ab8b576dff666a324b",
+      "signature": "fad922d6caf4728f0ca40a908bb3f834cbd31f0b",
       "chunks_indexed": 1,
-      "ocr_available": true,
-      "used_fallback": false,
-      "updated_at": "2026-06-18T09:53:02.075998+00:00"
+      "ocr_available": false,
+      "used_fallback": true,
+      "updated_at": "2026-06-18T15:28:22.470743+00:00"
     }
   }
 }
